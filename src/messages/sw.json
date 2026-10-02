@@ -1,0 +1,66 @@
+{
+  "Metadata": {
+    "title": "Lango: huduma za serikali mahali pamoja",
+    "titleTemplate": "%s · Lango",
+    "description": "Andika unachohitaji kwa maneno yako. Lango inakuonyesha tovuti sahihi ya serikali, nyaraka za kuandaa na hatua za kufuata."
+  },
+  "Common": {
+    "brand": "Lango",
+    "skipToContent": "Ruka hadi maudhui",
+    "home": "Mwanzo"
+  },
+  "Language": {
+    "label": "Lugha",
+    "sw": "Kiswahili",
+    "en": "English"
+  },
+  "Hero": {
+    "title": "Unataka kufanya nini leo?",
+    "subtitle": "Andika kwa maneno yako. Tutakuonyesha tovuti sahihi ya serikali na hatua za kufuata."
+  },
+  "Search": {
+    "label": "Andika huduma unayotafuta",
+    "placeholder": "Mf. leseni ya udereva",
+    "submit": "Tafuta",
+    "tryLabel": "Jaribu:",
+    "examples": ["Leseni ya udereva", "Sajili biashara", "Matokeo ya NECTA", "Mkopo wa HESLB"]
+  },
+  "HowItWorks": {
+    "title": "Inavyofanya kazi",
+    "lede": "Lango ni mwongozo. Hatukamilishi ombi lako, tunakuonyesha njia sahihi.",
+    "steps": [
+      {
+        "title": "Andika unachohitaji",
+        "body": "Kwa Kiswahili, Kiingereza au mchanganyiko. Hakuna haja ya kujua jina la taasisi."
+      },
+      {
+        "title": "Andaa nyaraka na ufuate hatua",
+        "body": "Tunakuonyesha nyaraka za kuandaa na hatua kwa mpangilio, na maendeleo yako yanabaki kwenye simu yako."
+      },
+      {
+        "title": "Maliza kwenye tovuti rasmi",
+        "body": "Kitufe kimoja kinakupeleka moja kwa moja kwenye tovuti ya taasisi husika."
+      }
+    ]
+  },
+  "Trust": {
+    "title": "Taarifa zako zinabaki kwako",
+    "body": "Hatuombi nenosiri lako, namba ya NIDA wala namba ya simu. Unaingia moja kwa moja kwenye tovuti rasmi ya serikali."
+  },
+  "SearchPage": {
+    "title": "Tafuta huduma",
+    "comingSoonTitle": "Utafutaji unakuja hivi karibuni",
+    "comingSoonBody": "Tunaandaa orodha ya huduma zilizothibitishwa. Rudi baadaye kidogo.",
+    "youSearched": "Ulitafuta: {query}",
+    "back": "Rudi mwanzo"
+  },
+  "NotFound": {
+    "title": "Ukurasa haukupatikana",
+    "body": "Huenda kiungo kimebadilika au hakipo tena.",
+    "back": "Rudi mwanzo"
+  },
+  "Footer": {
+    "disclaimer": "Lango ni mwongozo huru, si tovuti ya serikali. Hakiki kila hatua kwenye tovuti ya taasisi husika kabla ya kulipa au kuwasilisha.",
+    "privacy": "Maendeleo ya hatua zako yanahifadhiwa kwenye kifaa chako pekee."
+  }
+}

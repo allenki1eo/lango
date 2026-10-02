@@ -1,0 +1,66 @@
+{
+  "Metadata": {
+    "title": "Lango: government services in one place",
+    "titleTemplate": "%s · Lango",
+    "description": "Describe what you need in your own words. Lango shows you the right government site, the documents to prepare and the steps to follow."
+  },
+  "Common": {
+    "brand": "Lango",
+    "skipToContent": "Skip to content",
+    "home": "Home"
+  },
+  "Language": {
+    "label": "Language",
+    "sw": "Kiswahili",
+    "en": "English"
+  },
+  "Hero": {
+    "title": "What do you need to do today?",
+    "subtitle": "Type it in your own words. We'll point you to the right government site and walk you through the steps."
+  },
+  "Search": {
+    "label": "Type the service you are looking for",
+    "placeholder": "e.g. driving licence",
+    "submit": "Search",
+    "tryLabel": "Try:",
+    "examples": ["Driving licence", "Register a business", "NECTA results", "HESLB loan"]
+  },
+  "HowItWorks": {
+    "title": "How it works",
+    "lede": "Lango is a guide. We don't complete your application; we show you the right way to do it.",
+    "steps": [
+      {
+        "title": "Say what you need",
+        "body": "In Swahili, English or a mix. You don't need to know which agency handles it."
+      },
+      {
+        "title": "Prepare documents and follow the steps",
+        "body": "We show the documents to prepare and the steps in order, and your progress stays on your phone."
+      },
+      {
+        "title": "Finish on the official site",
+        "body": "One button takes you straight to the agency's own website."
+      }
+    ]
+  },
+  "Trust": {
+    "title": "Your details stay with you",
+    "body": "We never ask for your password, NIDA number or phone number. You sign in directly on the official government site."
+  },
+  "SearchPage": {
+    "title": "Find a service",
+    "comingSoonTitle": "Search is coming soon",
+    "comingSoonBody": "We're preparing a list of verified services. Please check back shortly.",
+    "youSearched": "You searched for: {query}",
+    "back": "Back to home"
+  },
+  "NotFound": {
+    "title": "Page not found",
+    "body": "The link may have changed or no longer exists.",
+    "back": "Back to home"
+  },
+  "Footer": {
+    "disclaimer": "Lango is an independent guide, not a government website. Check every step on the agency's own site before you pay or submit.",
+    "privacy": "Your step progress is saved on your device only."
+  }
+}

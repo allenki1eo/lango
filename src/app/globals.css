@@ -1,0 +1,148 @@
+@import "tailwindcss";
+
+/*
+ * Lango design tokens. Light values are the default; dark values apply when the system prefers
+ * dark (unless the page forces light) or when the page forces dark with data-theme="dark".
+ */
+:root {
+  --bg: #edf2f0;
+  --surface: #ffffff;
+  --ink: #0d221e;
+  --muted: #4e645e;
+  --line: #d2ddd9;
+  --brand: #0a5a4b;
+  --brand-ink: #ffffff;
+  --brand-soft: #dcebe6;
+  --hero: #0a5a4b;
+  --hero-ink: #ffffff;
+  --hero-muted: #bfdcd3;
+  --sun: #f5b50a;
+  --sun-ink: #2a1f00;
+  --sun-soft: #fff1c2;
+  --focus: #1b6ef3;
+  --ok: #0a7a52;
+  --shadow-card: 0 1px 2px rgb(13 34 30 / 0.06), 0 14px 30px -16px rgb(13 34 30 / 0.28);
+  --shadow-float: 0 18px 40px -18px rgb(0 0 0 / 0.55);
+
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #09130f;
+    --surface: #10201b;
+    --ink: #e7f0ed;
+    --muted: #93aaa3;
+    --line: #22372f;
+    --brand: #3cc9a7;
+    --brand-ink: #04201a;
+    --brand-soft: #173a31;
+    --hero: #062e26;
+    --hero-ink: #f2faf7;
+    --hero-muted: #9dc6bb;
+    --sun-soft: #3a2f08;
+    --focus: #6aa3ff;
+    --ok: #52d6a3;
+    --shadow-card: 0 1px 2px rgb(0 0 0 / 0.4), 0 14px 30px -16px rgb(0 0 0 / 0.7);
+
+    color-scheme: dark;
+  }
+}
+
+:root[data-theme="dark"] {
+  --bg: #09130f;
+  --surface: #10201b;
+  --ink: #e7f0ed;
+  --muted: #93aaa3;
+  --line: #22372f;
+  --brand: #3cc9a7;
+  --brand-ink: #04201a;
+  --brand-soft: #173a31;
+  --hero: #062e26;
+  --hero-ink: #f2faf7;
+  --hero-muted: #9dc6bb;
+  --sun-soft: #3a2f08;
+  --focus: #6aa3ff;
+  --ok: #52d6a3;
+  --shadow-card: 0 1px 2px rgb(0 0 0 / 0.4), 0 14px 30px -16px rgb(0 0 0 / 0.7);
+
+  color-scheme: dark;
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-brand: var(--brand);
+  --color-brand-ink: var(--brand-ink);
+  --color-brand-soft: var(--brand-soft);
+  --color-hero: var(--hero);
+  --color-hero-ink: var(--hero-ink);
+  --color-hero-muted: var(--hero-muted);
+  --color-sun: var(--sun);
+  --color-sun-ink: var(--sun-ink);
+  --color-sun-soft: var(--sun-soft);
+  --color-focus: var(--focus);
+  --color-ok: var(--ok);
+
+  --font-display: var(--font-bricolage), "Trebuchet MS", system-ui, sans-serif;
+  --font-sans: var(--font-instrument), system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+
+  --shadow-card: var(--shadow-card);
+  --shadow-float: var(--shadow-float);
+}
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+    scroll-padding-top: env(safe-area-inset-top, 0px);
+  }
+
+  body {
+    min-height: 100dvh;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--font-sans);
+    line-height: 1.55;
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+
+  :focus-visible {
+    outline: 3px solid var(--focus);
+    outline-offset: 2px;
+    border-radius: 6px;
+  }
+
+  /* On the dark-green hero the blue ring disappears, so focus uses the sun colour there. */
+  [data-surface="hero"] :focus-visible {
+    outline-color: var(--sun);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+@utility wrap {
+  width: 100%;
+  max-width: 1080px;
+  margin-inline: auto;
+  padding-inline: 16px;
+
+  @media (width >= 40rem) {
+    padding-inline: 20px;
+  }
+}
+
+@utility tracking-display {
+  letter-spacing: -0.03em;
+}
