@@ -6,7 +6,7 @@ test.describe("foundation", () => {
     await expect(page).toHaveURL(/\/sw$/);
     await expect(page.locator("html")).toHaveAttribute("lang", "sw");
     await expect(page.getByRole("heading", { level: 1 })).toHaveText("Unataka kufanya nini leo?");
-    await expect(page.getByRole("searchbox", { name: "Andika huduma unayotafuta" })).toBeVisible();
+    await expect(page.getByRole("searchbox", { name: "Uliza swali au andika huduma" })).toBeVisible();
   });
 
   test("switches language and back", async ({ page }) => {
@@ -49,16 +49,23 @@ test.describe("foundation", () => {
     const page = await context.newPage();
     await page.goto("/sw");
     await page.getByRole("searchbox").fill("leseni ya udereva");
-    await page.getByRole("button", { name: "Tafuta" }).click();
+    await page.getByRole("button", { name: "Uliza" }).click();
     await expect(page).toHaveURL(/\/sw\/tafuta\?q=leseni\+ya\+udereva$/);
     await expect(page.getByText("Ulitafuta: leseni ya udereva")).toBeVisible();
     await context.close();
   });
 
-  test("example queries lead to search", async ({ page }) => {
+  test("example question shows a guide card", async ({ page }) => {
     await page.goto("/en");
-    await page.getByRole("link", { name: "Driving licence" }).click();
-    await expect(page).toHaveURL(/\/en\/tafuta\?q=Driving\+licence$/);
+    await page.getByRole("link", { name: "Register a business", exact: true }).click();
+    await expect(page.getByRole("heading", { name: /BRELA/ }).first()).toBeVisible();
+  });
+
+  test("service pages are server-rendered with official sources", async ({ page }) => {
+    await page.goto("/sw/huduma/pasipoti");
+    await expect(page.getByRole("heading", { level: 1 })).toHaveText("Pasipoti (Uhamiaji)");
+    await expect(page.getByText("TZS 150,000")).toBeVisible();
+    await expect(page.getByText(/Imekaguliwa mwisho/)).toBeVisible();
   });
 
   test("fits a 360 px screen without horizontal scrolling", async ({ page }) => {
@@ -73,7 +80,7 @@ test.describe("foundation", () => {
   test("uses dark tokens when the system prefers dark", async ({ page }) => {
     await page.emulateMedia({ colorScheme: "dark" });
     await page.goto("/sw");
-    await expect(page.locator("body")).toHaveCSS("background-color", "rgb(9, 19, 15)");
+    await expect(page.locator("body")).toHaveCSS("background-color", "rgb(15, 14, 36)");
   });
 
   test("offers a skip link as the first focus stop", async ({ page }) => {

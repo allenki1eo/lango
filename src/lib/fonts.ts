@@ -1,14 +1,9 @@
-import { Bricolage_Grotesque, Instrument_Sans } from "next/font/google";
+import { Bricolage_Grotesque, Figtree } from "next/font/google";
 
 export const bricolage = Bricolage_Grotesque({
   subsets: ["latin"],
   display: "swap",
   variable: "--font-bricolage",
-  axes: ["opsz"],
+  weight: ["700", "800"],
 });
-
-export const instrument = Instrument_Sans({
-  subsets: ["latin"],
-  display: "swap",
-  variable: "--font-instrument",
-});
+export const figtree = Figtree({ subsets: ["latin"], display: "swap", variable: "--font-figtree" });

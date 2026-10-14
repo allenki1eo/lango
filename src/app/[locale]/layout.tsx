@@ -5,7 +5,7 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { getPathname } from "@/lib/i18n/navigation";
 import { routing } from "@/lib/i18n/routing";
 import { readServerEnv } from "@/lib/env";
-import { bricolage, instrument } from "@/lib/fonts";
+import { bricolage, figtree } from "@/lib/fonts";
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
@@ -16,8 +16,8 @@ export const viewport: Viewport = {
   initialScale: 1,
   viewportFit: "cover",
   themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#0A5A4B" },
-    { media: "(prefers-color-scheme: dark)", color: "#062E26" },
+    { media: "(prefers-color-scheme: light)", color: "#1F1C5C" },
+    { media: "(prefers-color-scheme: dark)", color: "#14123D" },
   ],
 };
 
@@ -46,7 +46,7 @@ export default async function LocaleLayout({ children, params }: LayoutProps<"/[
   const t = await getTranslations({ locale, namespace: "Common" });
 
   return (
-    <html lang={locale} className={`${bricolage.variable} ${instrument.variable}`}>
+    <html lang={locale} className={`${bricolage.variable} ${figtree.variable}`}>
       <body>
         <a
           href="#main"

@@ -18,7 +18,7 @@ export default function NotFound() {
         <p className="mb-6 text-muted">{t("body")}</p>
         <LocaleLink
           href="/"
-          className="inline-flex min-h-12 items-center rounded-[14px] bg-brand px-5 font-semibold text-brand-ink no-underline transition hover:brightness-110"
+          className="inline-flex min-h-12 items-center rounded-[14px] bg-teal px-5 font-semibold text-white no-underline transition hover:brightness-110"
         >
           {t("back")}
         </LocaleLink>

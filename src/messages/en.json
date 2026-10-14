@@ -1,8 +1,8 @@
 {
   "Metadata": {
-    "title": "Lango: government services in one place",
+    "title": "Lango: Tanzanian government services in one place",
     "titleTemplate": "%s · Lango",
-    "description": "Describe what you need in your own words. Lango shows you the right government site, the documents to prepare and the steps to follow."
+    "description": "Ask in English or Swahili, or tap a service: NIDA, passport, TIN, BRELA, RITA, driving licence, NHIF, NSSF, HESLB, NECTA, LUKU and more. Steps, verified fees and the official link."
   },
   "Common": {
     "brand": "Lango",
@@ -16,42 +16,19 @@
   },
   "Hero": {
     "title": "What do you need to do today?",
-    "subtitle": "Type it in your own words. We'll point you to the right government site and walk you through the steps."
+    "subtitle": "Ask in your own words, or tap a service below. We show the steps, documents and the official site."
   },
   "Search": {
-    "label": "Type the service you are looking for",
-    "placeholder": "e.g. driving licence",
-    "submit": "Search",
+    "label": "Ask a question or type a service",
+    "placeholder": "E.g. I want to get a NIDA ID",
+    "submit": "Ask",
     "tryLabel": "Try:",
-    "examples": ["Driving licence", "Register a business", "NECTA results", "HESLB loan"]
-  },
-  "HowItWorks": {
-    "title": "How it works",
-    "lede": "Lango is a guide. We don't complete your application; we show you the right way to do it.",
-    "steps": [
-      {
-        "title": "Say what you need",
-        "body": "In Swahili, English or a mix. You don't need to know which agency handles it."
-      },
-      {
-        "title": "Prepare documents and follow the steps",
-        "body": "We show the documents to prepare and the steps in order, and your progress stays on your phone."
-      },
-      {
-        "title": "Finish on the official site",
-        "body": "One button takes you straight to the agency's own website."
-      }
-    ]
-  },
-  "Trust": {
-    "title": "Your details stay with you",
-    "body": "We never ask for your password, NIDA number or phone number. You sign in directly on the official government site."
+    "examples": ["I want to get a NIDA ID", "How much is a passport?", "Register a business", "NECTA results"]
   },
   "SearchPage": {
-    "title": "Find a service",
-    "comingSoonTitle": "Search is coming soon",
-    "comingSoonBody": "We're preparing a list of verified services. Please check back shortly.",
-    "youSearched": "You searched for: {query}",
+    "title": "Results",
+    "noResults": "No service found for \"{query}\".",
+    "youSearched": "You searched: {query}",
     "back": "Back to home"
   },
   "NotFound": {
@@ -60,7 +37,45 @@
     "back": "Back to home"
   },
   "Footer": {
-    "disclaimer": "Lango is an independent guide, not a government website. Check every step on the agency's own site before you pay or submit.",
-    "privacy": "Your step progress is saved on your device only."
+    "disclaimer": "Lango is an independent guide, not a government website. Check every step on the agency's site before paying or submitting.",
+    "privacy": "Your step progress is stored on your device only.",
+    "by": "by Hanki Technologies"
+  },
+  "Ask": {
+    "thinking": "Lango is looking…",
+    "error": "Sorry, something went wrong. Please try again.",
+    "rate": "Too many questions in a short time. Wait a minute.",
+    "noMatch": "I couldn't find a matching service. Try other words or pick a category below.",
+    "fromSearch": "Search results",
+    "aiNote": "The assistant only answers from Lango's verified data. Check the official site.",
+    "related": "Related services",
+    "offices": "Offices and contacts",
+    "viewGuide": "Open the full guide"
+  },
+  "Home": {
+    "categories": "Choose a service",
+    "popular": "Most searched",
+    "emergency": "Emergency? Call free",
+    "allServices": "All services",
+    "callLabel": "Call {number}"
+  },
+  "Guide": {
+    "official": "Open the official site",
+    "documents": "Documents to prepare",
+    "steps": "Steps to follow",
+    "stepsHint": "Tick each step when you finish it. Saved on your phone only.",
+    "fees": "Fees",
+    "feeSource": "Source",
+    "noFees": "Fee not verified",
+    "contacts": "Contacts",
+    "sources": "Official sources",
+    "lastChecked": "Last checked: {date}",
+    "agency": "Agency",
+    "done": "{done} of {total} done",
+    "reset": "Start over"
+  },
+  "Services": {
+    "title": "All services",
+    "lede": "Verified guides from official government websites."
   }
 }

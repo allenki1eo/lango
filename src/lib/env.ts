@@ -9,7 +9,7 @@ const serverEnvSchema = z.object({
   TURSO_DATABASE_URL: z.string().min(1).default("file:local.db"),
   TURSO_AUTH_TOKEN: z.string().optional(),
   AI_ENABLED: booleanString,
-  AI_MODEL: z.string().default("claude-haiku-4-5"),
+  AI_MODELS: z.string().optional(),
   NEXT_PUBLIC_SITE_URL: z.url().default("http://localhost:3000"),
 });
 

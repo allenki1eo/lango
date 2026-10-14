@@ -1,10 +1,10 @@
 import Link from "next/link";
-import { bricolage, instrument } from "@/lib/fonts";
+import { bricolage, figtree } from "@/lib/fonts";
 
 // Fallback for paths outside the locale routes. Locale pages use [locale]/not-found.tsx instead.
 export default function GlobalNotFound() {
   return (
-    <html lang="sw" className={`${bricolage.variable} ${instrument.variable}`}>
+    <html lang="sw" className={`${bricolage.variable} ${figtree.variable}`}>
       <body>
         <main className="wrap grid min-h-dvh content-center gap-2 py-16">
           <h1 className="font-display text-[2rem] leading-tight font-extrabold tracking-display">
@@ -15,7 +15,7 @@ export default function GlobalNotFound() {
           </p>
           <Link
             href="/sw"
-            className="mt-4 inline-flex min-h-12 w-fit items-center rounded-[14px] bg-brand px-5 font-semibold text-brand-ink no-underline"
+            className="mt-4 inline-flex min-h-12 w-fit items-center rounded-[14px] bg-teal px-5 font-semibold text-white no-underline"
           >
             Lango
           </Link>

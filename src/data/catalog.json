@@ -1,0 +1,1343 @@
+{
+  "lastChecked": "2026-10-14",
+  "categories": [
+    {
+      "slug": "utambulisho",
+      "name": {
+        "sw": "Utambulisho",
+        "en": "Identity"
+      },
+      "icon": "id"
+    },
+    {
+      "slug": "kodi-biashara",
+      "name": {
+        "sw": "Kodi na biashara",
+        "en": "Tax and business"
+      },
+      "icon": "briefcase"
+    },
+    {
+      "slug": "familia",
+      "name": {
+        "sw": "Familia na vyeti",
+        "en": "Family and certificates"
+      },
+      "icon": "certificate"
+    },
+    {
+      "slug": "usafiri",
+      "name": {
+        "sw": "Usafiri",
+        "en": "Transport"
+      },
+      "icon": "car"
+    },
+    {
+      "slug": "ardhi-makazi",
+      "name": {
+        "sw": "Ardhi na makazi",
+        "en": "Land and housing"
+      },
+      "icon": "land"
+    },
+    {
+      "slug": "afya-hifadhi",
+      "name": {
+        "sw": "Afya na hifadhi ya jamii",
+        "en": "Health and social security"
+      },
+      "icon": "health"
+    },
+    {
+      "slug": "elimu",
+      "name": {
+        "sw": "Elimu",
+        "en": "Education"
+      },
+      "icon": "school"
+    },
+    {
+      "slug": "nishati-maji",
+      "name": {
+        "sw": "Umeme na maji",
+        "en": "Power and water"
+      },
+      "icon": "power"
+    },
+    {
+      "slug": "malipo",
+      "name": {
+        "sw": "Malipo ya serikali",
+        "en": "Government payments"
+      },
+      "icon": "pay"
+    },
+    {
+      "slug": "msaada",
+      "name": {
+        "sw": "Msaada na malalamiko",
+        "en": "Help and complaints"
+      },
+      "icon": "siren"
+    }
+  ],
+  "services": [
+    {
+      "slug": "nida-kitambulisho",
+      "agency": "NIDA",
+      "category": "utambulisho",
+      "icon": "id",
+      "popular": true,
+      "title": {
+        "sw": "Kitambulisho cha Taifa (NIDA)",
+        "en": "National ID (NIDA)"
+      },
+      "summary": {
+        "sw": "Jisajili kupata Namba ya Utambulisho (NIN) na Kitambulisho cha Taifa, fahamu NIN yako au fuatilia ombi.",
+        "en": "Register for a National ID Number (NIN) and National ID card, look up your NIN or track an application."
+      },
+      "officialUrl": "https://services.nida.go.tz/",
+      "sources": ["https://www.nida.go.tz/", "https://eonline.nida.go.tz/Home/UserGuide"],
+      "documents": [
+        {
+          "sw": "Cheti cha kuzaliwa (lazima kwa waliozaliwa 1980 na baadaye; kabla ya 1980 cheti au kiapo)",
+          "en": "Birth certificate (required if born 1980 or later; before 1980, a certificate or affidavit)"
+        },
+        {
+          "sw": "Nyaraka nyingine za kuthibitisha uraia kama zinavyoorodheshwa na NIDA",
+          "en": "Other citizenship documents as listed by NIDA"
+        },
+        {
+          "sw": "Barua pepe inayofanya kazi kwa usajili wa mtandaoni",
+          "en": "A working email address for online registration"
+        }
+      ],
+      "steps": [
+        {
+          "sw": "Fungua NIDA Online (eonline.nida.go.tz) na ujisajili kwa barua pepe yako.",
+          "en": "Open NIDA Online (eonline.nida.go.tz) and sign up with your email."
+        },
+        {
+          "sw": "Fungua kiunga ulichotumiwa kwenye barua pepe ili kukamilisha usajili wa akaunti.",
+          "en": "Open the link sent to your email to finish creating the account."
+        },
+        {
+          "sw": "Jaza fomu ya maombi na upakie nyaraka (PDF ukurasa mmoja au JPG/PNG).",
+          "en": "Fill in the application and upload documents (single-page PDF or JPG/PNG)."
+        },
+        {
+          "sw": "Chapisha fomu ya maombi.",
+          "en": "Print the application form."
+        },
+        {
+          "sw": "Peleka fomu na nyaraka halisi ofisi ya NIDA ya wilaya kwa alama za vidole na picha.",
+          "en": "Take the form and original documents to the NIDA district office for fingerprints and photo."
+        },
+        {
+          "sw": "Fuatilia ombi lako kupitia huduma ya 'Fuatilia Ombi' au 'Fahamu NIN'.",
+          "en": "Track your application with 'Fuatilia Ombi' or look up your NIN with 'Fahamu NIN'."
+        }
+      ],
+      "feeNote": {
+        "sw": "NIDA inasema usajili wa raia una njia mbili (mtandaoni na kawaida). Kwa kitambulisho kilichopotea kuna 'gharama kidogo' inayolipwa kwa control number kupitia 'Malipo Kimtandao'; kiasi hakijaonyeshwa kwenye ukurasa wa mwanzo.",
+        "en": "NIDA says citizen registration is online or in person. Replacing a lost ID carries a 'small cost' paid by control number via 'Malipo Kimtandao'; the amount is not shown on the home page."
+      },
+      "contacts": [
+        {
+          "label": {
+            "sw": "Huduma kwa wateja NIDA",
+            "en": "NIDA customer care"
+          },
+          "value": "023 221 0500",
+          "href": "tel:0232210500"
+        }
+      ],
+      "keywords": [
+        "nida",
+        "kitambulisho",
+        "nin",
+        "id",
+        "national id",
+        "utambulisho",
+        "namba ya nida",
+        "kitambulisho cha taifa",
+        "lost id",
+        "kimepotea"
+      ],
+      "fees": [],
+      "lastChecked": "2026-10-14"
+    },
+    {
+      "slug": "pasipoti",
+      "agency": "Uhamiaji",
+      "category": "utambulisho",
+      "icon": "passport",
+      "popular": true,
+      "title": {
+        "sw": "Pasipoti (Uhamiaji)",
+        "en": "Passport (Immigration)"
+      },
+      "summary": {
+        "sw": "Omba pasipoti ya kielektroniki mtandaoni, kisha peleka fomu ofisi ya Uhamiaji.",
+        "en": "Apply online for an e-passport, then take the form to an Immigration office."
+      },
+      "officialUrl": "https://eservices.immigration.go.tz/online/web/passport",
+      "sources": [
+        "https://eservices.immigration.go.tz/online/web/passport/guidelines",
+        "https://immigration.go.tz/index.php/fees/passport-fees"
+      ],
+      "documents": [
+        {
+          "sw": "Cheti cha kuzaliwa cha mwombaji",
+          "en": "Applicant's birth certificate"
+        },
+        {
+          "sw": "Cheti/kiapo cha kuzaliwa cha mzazi",
+          "en": "Parent's birth certificate or affidavit"
+        },
+        {
+          "sw": "Kitambulisho cha Taifa",
+          "en": "National ID"
+        },
+        {
+          "sw": "Picha ya hivi karibuni yenye mandharinyuma ya buluu hafifu",
+          "en": "Recent photo with light blue background"
+        },
+        {
+          "sw": "Ushahidi wa safari au shughuli unayofanya",
+          "en": "Proof of travel or of your occupation"
+        }
+      ],
+      "steps": [
+        {
+          "sw": "Fungua e-Immigration na uchague 'Ombi Jipya' (au ENDELEZA OMBI kama ulishaanza).",
+          "en": "Open e-Immigration and choose 'Ombi Jipya' (or continue an existing application)."
+        },
+        {
+          "sw": "Chagua aina ya ombi: mpya, imejaa/imeisha muda, imepotea au imeharibika.",
+          "en": "Choose the application type: new, full/expired, lost or damaged."
+        },
+        {
+          "sw": "Jaza taarifa zako, wadhamini na watu wa kuwasiliana nao; hifadhi Application ID.",
+          "en": "Enter your details, referees and emergency contacts; save the Application ID."
+        },
+        {
+          "sw": "Pakia vielelezo vyote, hakiki na uwasilishe.",
+          "en": "Upload all documents, review and submit."
+        },
+        {
+          "sw": "Lipa ada ya fomu kwa control number, kisha chapisha fomu.",
+          "en": "Pay the form fee with the control number, then print the form."
+        },
+        {
+          "sw": "Peleka fomu na vielelezo ofisi ya Uhamiaji iliyo karibu; ukishahakikiwa lipa ada ya pasipoti na utoe alama za vidole.",
+          "en": "Take the form and documents to the nearest Immigration office; after verification pay the passport fee and give fingerprints."
+        }
+      ],
+      "fees": [
+        {
+          "label": {
+            "sw": "Ada ya fomu (ndani ya nchi)",
+            "en": "Application form fee (in Tanzania)"
+          },
+          "amount": "TZS 20,000",
+          "source": "https://eservices.immigration.go.tz/online/web/passport/guidelines"
+        },
+        {
+          "label": {
+            "sw": "Pasipoti ya kawaida: jumla ndani ya nchi (20,000 + 130,000)",
+            "en": "Ordinary passport: total in Tanzania (20,000 + 130,000)"
+          },
+          "amount": "TZS 150,000",
+          "source": "https://immigration.go.tz/index.php/fees/passport-fees"
+        },
+        {
+          "label": {
+            "sw": "Ukiomba nje ya nchi (ubalozi)",
+            "en": "Applying abroad (embassy)"
+          },
+          "amount": "USD 90",
+          "source": "https://immigration.go.tz/index.php/fees/passport-fees"
+        },
+        {
+          "label": {
+            "sw": "Hati ya dharura ya safari",
+            "en": "Emergency travel document"
+          },
+          "amount": "TZS 20,000",
+          "source": "https://immigration.go.tz/index.php/fees/passport-fees"
+        }
+      ],
+      "keywords": [
+        "pasipoti",
+        "passport",
+        "hati ya kusafiria",
+        "uhamiaji",
+        "immigration",
+        "safari nje",
+        "travel",
+        "e-passport"
+      ],
+      "feeNote": null,
+      "contacts": [],
+      "lastChecked": "2026-10-14"
+    },
+    {
+      "slug": "tin-tra",
+      "agency": "TRA",
+      "category": "kodi-biashara",
+      "icon": "tax",
+      "popular": true,
+      "title": {
+        "sw": "Namba ya Mlipakodi (TIN)",
+        "en": "Taxpayer Identification Number (TIN)"
+      },
+      "summary": {
+        "sw": "Omba TIN ya mtu binafsi mtandaoni kupitia TRA Taxpayer Portal ukitumia NIN.",
+        "en": "Apply online for an individual TIN on the TRA Taxpayer Portal using your NIN."
+      },
+      "officialUrl": "https://taxpayerportal.tra.go.tz/",
+      "sources": ["https://www.tra.go.tz/page/starting-business-income-for-individuals-and-paying-taxes"],
+      "documents": [
+        {
+          "sw": "Kitambulisho rasmi: Kitambulisho cha Taifa, pasipoti au kadi ya mpiga kura",
+          "en": "Official ID: National ID, passport or voter ID"
+        },
+        {
+          "sw": "Namba ya simu inayopokea SMS (OTP)",
+          "en": "A phone number that receives SMS (OTP)"
+        },
+        {
+          "sw": "Kwa TIN ya biashara: barua ya serikali ya mtaa na mkataba wa pango au hati ya eneo",
+          "en": "For a business TIN: a local government letter and a lease or title for the premises"
+        }
+      ],
+      "steps": [
+        {
+          "sw": "Fungua TRA Taxpayer Portal na ubofye 'Apply for TIN'.",
+          "en": "Open the TRA Taxpayer Portal and click 'Apply for TIN'."
+        },
+        {
+          "sw": "Weka NIN na namba ya simu.",
+          "en": "Enter your NIN and phone number."
+        },
+        {
+          "sw": "Jaza fomu ya TIN (isiyo ya biashara au ya biashara) na uwasilishe.",
+          "en": "Complete the TIN form (non-business or business) and submit."
+        },
+        {
+          "sw": "Weka OTP uliyotumiwa kwa SMS.",
+          "en": "Enter the OTP sent by SMS."
+        },
+        {
+          "sw": "Utapokea SMS yenye TIN na nenosiri.",
+          "en": "You receive an SMS with your TIN and password."
+        },
+        {
+          "sw": "Kwa TIN ya biashara, TRA itakufanyia mahojiano ya tathmini ya kodi.",
+          "en": "For a business TIN, TRA will hold a tax assessment interview."
+        }
+      ],
+      "feeNote": {
+        "sw": "Hatujathibitisha ada kwenye tovuti rasmi. Angalia kiasi kwenye namba ya malipo (control number) au ukurasa rasmi kabla ya kulipa.",
+        "en": "We have not verified a fee on the official site. Check the amount on your control number or the official page before paying."
+      },
+      "contacts": [
+        {
+          "label": {
+            "sw": "TRA bila malipo",
+            "en": "TRA toll-free"
+          },
+          "value": "0800 750 075",
+          "href": "tel:0800750075"
+        },
+        {
+          "label": {
+            "sw": "TRA bila malipo",
+            "en": "TRA toll-free"
+          },
+          "value": "0800 780 078",
+          "href": "tel:0800780078"
+        }
+      ],
+      "keywords": ["tin", "tra", "kodi", "tax", "mlipakodi", "taxpayer", "namba ya mlipakodi", "tax clearance"],
+      "fees": [],
+      "lastChecked": "2026-10-14"
+    },
+    {
+      "slug": "brela-usajili-biashara",
+      "agency": "BRELA",
+      "category": "kodi-biashara",
+      "icon": "briefcase",
+      "popular": true,
+      "title": {
+        "sw": "Sajili jina la biashara au kampuni (BRELA)",
+        "en": "Register a business name or company (BRELA)"
+      },
+      "summary": {
+        "sw": "Sajili jina la biashara au kampuni mtandaoni kupitia BRELA ORS.",
+        "en": "Register a business name or company online with BRELA ORS."
+      },
+      "officialUrl": "https://ors.brela.go.tz/",
+      "sources": ["https://www.brela.go.tz/services/registration-of-companies"],
+      "documents": [
+        {
+          "sw": "Kitambulisho cha Taifa (NIN) cha wamiliki/wakurugenzi",
+          "en": "National ID (NIN) of owners/directors"
+        },
+        {
+          "sw": "Fomu zilizosainiwa zinazotakiwa na ORS (mf. consolidated form)",
+          "en": "Signed forms required by ORS (e.g. consolidated form)"
+        },
+        {
+          "sw": "Kwa kampuni: katiba (memorandum na articles)",
+          "en": "For a company: memorandum and articles of association"
+        }
+      ],
+      "steps": [
+        {
+          "sw": "Fungua akaunti kwenye BRELA ORS na uiamilishe.",
+          "en": "Create and activate an account on BRELA ORS."
+        },
+        {
+          "sw": "Ingia, chagua 'New e-service' kisha Business Name au Company.",
+          "en": "Log in, choose 'New e-service', then Business Name or Company."
+        },
+        {
+          "sw": "Jaza fomu na taarifa za wamiliki/wakurugenzi/wanahisa.",
+          "en": "Complete the form with owner/director/shareholder details."
+        },
+        {
+          "sw": "Pakia fomu zilizosainiwa na nyaraka zinazohitajika.",
+          "en": "Upload the signed forms and required documents."
+        },
+        {
+          "sw": "Lipa kwa control number; ombi linawasilishwa baada ya malipo.",
+          "en": "Pay with the control number; the application is submitted after payment."
+        }
+      ],
+      "feeNote": {
+        "sw": "Hatujathibitisha ada kwenye tovuti rasmi. Angalia kiasi kwenye namba ya malipo (control number) au ukurasa rasmi kabla ya kulipa.",
+        "en": "We have not verified a fee on the official site. Check the amount on your control number or the official page before paying."
+      },
+      "keywords": [
+        "brela",
+        "biashara",
+        "kampuni",
+        "business",
+        "company",
+        "jina la biashara",
+        "business name",
+        "sajili biashara",
+        "register business",
+        "ors"
+      ],
+      "fees": [],
+      "contacts": [],
+      "lastChecked": "2026-10-14"
+    },
+    {
+      "slug": "rita-cheti-kuzaliwa-kifo",
+      "agency": "RITA",
+      "category": "familia",
+      "icon": "certificate",
+      "popular": true,
+      "title": {
+        "sw": "Cheti cha kuzaliwa au kifo (RITA)",
+        "en": "Birth or death certificate (RITA)"
+      },
+      "summary": {
+        "sw": "Omba cheti kipya cha kuzaliwa au kifo, badilisha cheti cha zamani au hakiki cheti kupitia eRITA.",
+        "en": "Apply for a new birth or death certificate, replace an old one or verify a certificate on eRITA."
+      },
+      "officialUrl": "https://erita.rita.go.tz/auth",
+      "sources": [
+        "https://www.rita.go.tz/page.php?lang=en&p=9",
+        "https://www.rita.go.tz/erita.php?lang=en",
+        "https://www.rita.go.tz/page.php?lang=en&m=Projects&p=20"
+      ],
+      "documents": [
+        {
+          "sw": "Taarifa ya kuzaliwa ya mtoto (notification) iliyoskaniwa",
+          "en": "Scanned birth notification of the child"
+        },
+        {
+          "sw": "Taarifa za wazazi",
+          "en": "Parents' details"
+        }
+      ],
+      "steps": [
+        {
+          "sw": "Ingia eRITA, chagua lugha na ujisajili kupata akaunti.",
+          "en": "Open eRITA, choose a language and register an account."
+        },
+        {
+          "sw": "Chagua Birth Services kisha 'New certificate'.",
+          "en": "Choose Birth Services, then 'New certificate'."
+        },
+        {
+          "sw": "Jaza taarifa za mtoto kwa usahihi na ambatisha notification.",
+          "en": "Enter the child's details correctly and attach the notification."
+        },
+        {
+          "sw": "Mfumo utatoa control number; lipa kupitia mitandao ya simu (huduma za serikali).",
+          "en": "The system issues a control number; pay via mobile money (government services)."
+        },
+        {
+          "sw": "Rudi kwenye akaunti yako: ukiona 'approved' au 'issued', cheti kiko tayari.",
+          "en": "Check your account: 'approved' or 'issued' means the certificate is ready."
+        }
+      ],
+      "fees": [
+        {
+          "label": {
+            "sw": "Ombi la cheti cha kuzaliwa mtandaoni (eRITA)",
+            "en": "Online birth certificate application (eRITA)"
+          },
+          "amount": "TZS 8,000",
+          "source": "https://www.rita.go.tz/page.php?lang=en&p=9"
+        },
+        {
+          "label": {
+            "sw": "Marekebisho ya cheti cha kuzaliwa (ombi likikubaliwa)",
+            "en": "Birth certificate correction (if allowed)"
+          },
+          "amount": "TZS 13,000",
+          "source": "https://www.rita.go.tz/page.php?lang=en&p=9"
+        },
+        {
+          "label": {
+            "sw": "Watoto chini ya miaka 5 katika mikoa inayotekeleza mpango",
+            "en": "Children under 5 in participating regions"
+          },
+          "amount": {
+            "sw": "Bure",
+            "en": "Free"
+          },
+          "source": "https://www.rita.go.tz/page.php?lang=en&m=Projects&p=20"
+        }
+      ],
+      "feeNote": {
+        "sw": "Ada ya cheti cha kifo haikuonekana wazi kwenye ukurasa tuliokagua; angalia control number yako.",
+        "en": "We could not confirm the death certificate fee on the page we checked; check your control number."
+      },
+      "contacts": [
+        {
+          "label": "RITA",
+          "value": "+255 22 292 4180",
+          "href": "tel:+255222924180"
+        }
+      ],
+      "keywords": [
+        "rita",
+        "cheti cha kuzaliwa",
+        "birth certificate",
+        "cheti cha kifo",
+        "death certificate",
+        "kuzaliwa",
+        "kifo",
+        "erita",
+        "cheti"
+      ],
+      "lastChecked": "2026-10-14"
+    },
+    {
+      "slug": "leseni-udereva",
+      "agency": "TRA",
+      "category": "usafiri",
+      "icon": "car",
+      "popular": true,
+      "title": {
+        "sw": "Leseni ya udereva",
+        "en": "Driving licence"
+      },
+      "summary": {
+        "sw": "Omba, huisha au pata nakala ya leseni ya udereva kupitia mfumo wa TRA (IDRAS).",
+        "en": "Apply for, renew or replace a driving licence through TRA's system (IDRAS)."
+      },
+      "officialUrl": "https://www.tra.go.tz/",
+      "sources": ["https://www.tra.go.tz/"],
+      "documents": [
+        {
+          "sw": "TIN au NIN",
+          "en": "TIN or NIN"
+        },
+        {
+          "sw": "Leseni ya zamani (kwa kuhuisha)",
+          "en": "Old licence (for renewal)"
+        },
+        {
+          "sw": "Cheti cha mafunzo ya udereva/uthibitisho wa umahiri kwa leseni mpya",
+          "en": "Driving school / competence evidence for a new licence"
+        }
+      ],
+      "steps": [
+        {
+          "sw": "Fungua tovuti ya TRA na uende sehemu ya Taxpayer Portal / IDRAS.",
+          "en": "Open the TRA website and go to Taxpayer Portal / IDRAS."
+        },
+        {
+          "sw": "Chagua huduma ya Driving Licence na aina ya ombi (mpya, kuhuisha, nakala).",
+          "en": "Choose Driving Licence and the application type (new, renewal, duplicate)."
+        },
+        {
+          "sw": "Jaza taarifa na uwasilishe.",
+          "en": "Fill in your details and submit."
+        },
+        {
+          "sw": "Chapisha taarifa ya malipo (payment notice) na ulipe kwa control number.",
+          "en": "Print the payment notice and pay with the control number."
+        },
+        {
+          "sw": "Fuata maelekezo ya TRA kuhusu kuchukua leseni.",
+          "en": "Follow TRA's instructions for collecting the licence."
+        }
+      ],
+      "feeNote": {
+        "sw": "Hatujathibitisha ada kwenye tovuti rasmi. Angalia kiasi kwenye namba ya malipo (control number) au ukurasa rasmi kabla ya kulipa.",
+        "en": "We have not verified a fee on the official site. Check the amount on your control number or the official page before paying."
+      },
+      "contacts": [
+        {
+          "label": {
+            "sw": "TRA bila malipo",
+            "en": "TRA toll-free"
+          },
+          "value": "0800 750 075",
+          "href": "tel:0800750075"
+        }
+      ],
+      "keywords": [
+        "leseni",
+        "udereva",
+        "driving licence",
+        "driving license",
+        "leseni ya udereva",
+        "idras",
+        "renew licence",
+        "kuhuisha leseni",
+        "gari"
+      ],
+      "fees": [],
+      "lastChecked": "2026-10-14"
+    },
+    {
+      "slug": "ardhi",
+      "agency": "Wizara ya Ardhi",
+      "category": "ardhi-makazi",
+      "icon": "land",
+      "title": {
+        "sw": "Ardhi: kodi ya pango na milki",
+        "en": "Land: land rent and titles"
+      },
+      "summary": {
+        "sw": "Pata makadirio na lipa kodi ya pango la ardhi, na huduma za milki kupitia e-Ardhi.",
+        "en": "Get a land rent assessment and pay it, and use title services through e-Ardhi."
+      },
+      "officialUrl": "https://eardhi.lands.go.tz/login",
+      "sources": ["https://landrent.lands.go.tz/", "https://www.ltip.lands.go.tz/howdois/land-rent-assessments"],
+      "documents": [
+        {
+          "sw": "Namba ya kiwanja/hati",
+          "en": "Plot or title number"
+        },
+        {
+          "sw": "Namba ya simu kwa OTP",
+          "en": "Phone number for OTP"
+        }
+      ],
+      "steps": [
+        {
+          "sw": "Kwa kodi ya pango, fungua landrent.lands.go.tz; kwa mikoa iliyohamia, utaelekezwa e-Ardhi.",
+          "en": "For land rent, open landrent.lands.go.tz; regions already migrated are directed to e-Ardhi."
+        },
+        {
+          "sw": "Ingia e-Ardhi kwa OTP kisha weka jina la mtumiaji na nenosiri.",
+          "en": "Sign in to e-Ardhi with an OTP, then set a username and password."
+        },
+        {
+          "sw": "Tafuta kiwanja chako na upate makadirio (bili) ya kodi.",
+          "en": "Find your plot and get the rent assessment (bill)."
+        },
+        {
+          "sw": "Lipa kwa control number.",
+          "en": "Pay with the control number."
+        }
+      ],
+      "feeNote": {
+        "sw": "Kodi ya pango hukadiriwa kwa kila kiwanja; Lango haionyeshi kiasi.",
+        "en": "Land rent is assessed per plot; Lango does not show an amount."
+      },
+      "keywords": [
+        "ardhi",
+        "land",
+        "kiwanja",
+        "plot",
+        "kodi ya pango",
+        "land rent",
+        "hati",
+        "title deed",
+        "e-ardhi",
+        "ardhisasa"
+      ],
+      "fees": [],
+      "contacts": [],
+      "lastChecked": "2026-10-14"
+    },
+    {
+      "slug": "nhif-bima-afya",
+      "agency": "NHIF",
+      "category": "afya-hifadhi",
+      "icon": "health",
+      "title": {
+        "sw": "Bima ya Afya (NHIF)",
+        "en": "Health insurance (NHIF)"
+      },
+      "summary": {
+        "sw": "Jisajili au simamia uanachama wa NHIF, ikiwemo Toto Afya Kadi kwa watoto.",
+        "en": "Register for or manage NHIF membership, including Toto Afya Kadi for children."
+      },
+      "officialUrl": "https://selfservice.nhif.or.tz/register",
+      "sources": [
+        "https://www.nhif.or.tz/pages/health-insurance-for-all",
+        "https://www.nhif.or.tz/pages/procedures-for-registration-of-members-of-the-toto-afya-package"
+      ],
+      "documents": [
+        {
+          "sw": "Kitambulisho cha Taifa",
+          "en": "National ID"
+        },
+        {
+          "sw": "Namba ya simu au barua pepe kwa OTP",
+          "en": "Phone or email for OTP"
+        },
+        {
+          "sw": "Kwa Toto Afya: nyaraka zilizoorodheshwa na NHIF (mf. cheti cha kuzaliwa)",
+          "en": "For Toto Afya: documents listed by NHIF (e.g. birth certificate)"
+        }
+      ],
+      "steps": [
+        {
+          "sw": "Fungua NHIF Self Service na uchague kujisajili.",
+          "en": "Open NHIF Self Service and choose to register."
+        },
+        {
+          "sw": "Weka taarifa zinazoombwa na thibitisha kwa OTP.",
+          "en": "Enter the requested details and confirm with the OTP."
+        },
+        {
+          "sw": "Chagua kifurushi (mf. Toto Afya) na usome masharti yake kwenye tovuti ya NHIF.",
+          "en": "Choose a package (e.g. Toto Afya) and read its terms on the NHIF site."
+        },
+        {
+          "sw": "Lipa mchango kwa control number utakayopewa.",
+          "en": "Pay the contribution with the control number you are given."
+        }
+      ],
+      "feeNote": {
+        "sw": "Michango hutegemea kifurushi. Angalia ukurasa rasmi wa NHIF kwa viwango vya sasa.",
+        "en": "Contributions depend on the package. See NHIF's official pages for current rates."
+      },
+      "keywords": ["nhif", "bima", "bima ya afya", "health insurance", "toto afya", "afya", "hospitali", "insurance"],
+      "fees": [],
+      "contacts": [],
+      "lastChecked": "2026-10-14"
+    },
+    {
+      "slug": "nssf-pensheni",
+      "agency": "NSSF",
+      "category": "afya-hifadhi",
+      "icon": "pension",
+      "title": {
+        "sw": "NSSF: michango na pensheni",
+        "en": "NSSF: contributions and pension"
+      },
+      "summary": {
+        "sw": "Angalia michango yako na upate taarifa (statement) kupitia NSSF Portal au app ya NSSF Taarifa.",
+        "en": "Check your contributions and get a statement on the NSSF Portal or NSSF Taarifa app."
+      },
+      "officialUrl": "https://portal.nssf.go.tz/",
+      "sources": ["https://www.nssf.go.tz/faqs", "https://www.nssf.go.tz/index.php/pages/registration-overview"],
+      "documents": [
+        {
+          "sw": "Namba ya uanachama NSSF",
+          "en": "NSSF membership number"
+        },
+        {
+          "sw": "Namba ya simu uliyosajilia NSSF",
+          "en": "The phone number registered with NSSF"
+        }
+      ],
+      "steps": [
+        {
+          "sw": "Usajili wa mwanachama mara nyingi hufanyika kupitia mwajiri katika ofisi za NSSF.",
+          "en": "Member registration is normally done through your employer at NSSF offices."
+        },
+        {
+          "sw": "Fungua NSSF Portal na uingie kwa namba yako ya simu iliyosajiliwa.",
+          "en": "Open the NSSF Portal and sign in with your registered phone number."
+        },
+        {
+          "sw": "Angalia michango na pakua statement.",
+          "en": "View contributions and download a statement."
+        },
+        {
+          "sw": "Kama namba ya simu hailingani, isasishe ofisi ya NSSF iliyo karibu.",
+          "en": "If your phone number doesn't match, update it at a nearby NSSF office."
+        }
+      ],
+      "feeNote": {
+        "sw": "Hakuna ada iliyoonyeshwa kwa kuangalia michango.",
+        "en": "No fee is listed for checking contributions."
+      },
+      "keywords": [
+        "nssf",
+        "pensheni",
+        "pension",
+        "michango",
+        "contributions",
+        "statement",
+        "mafao",
+        "hifadhi ya jamii"
+      ],
+      "fees": [],
+      "contacts": [],
+      "lastChecked": "2026-10-14"
+    },
+    {
+      "slug": "heslb-mkopo",
+      "agency": "HESLB",
+      "category": "elimu",
+      "icon": "school",
+      "popular": true,
+      "title": {
+        "sw": "Mkopo wa elimu ya juu (HESLB)",
+        "en": "Higher education loan (HESLB)"
+      },
+      "summary": {
+        "sw": "Omba mkopo wa elimu ya juu kupitia mfumo wa OLAMS wa HESLB.",
+        "en": "Apply for a higher education loan through HESLB's OLAMS system."
+      },
+      "officialUrl": "https://olas.heslb.go.tz/",
+      "sources": [
+        "https://www.heslb.go.tz/images/storage/downloads/1781868431_2-bachelor-degree-guidelines-for-2026-2027.pdf"
+      ],
+      "documents": [
+        {
+          "sw": "Kitambulisho cha Taifa (NIN)",
+          "en": "National ID (NIN)"
+        },
+        {
+          "sw": "Cheti cha kuzaliwa kilichohakikiwa na RITA",
+          "en": "Birth certificate verified by RITA"
+        },
+        {
+          "sw": "Namba za mitihani (CSEE/ACSEE au sawa na hizo)",
+          "en": "Exam numbers (CSEE/ACSEE or equivalent)"
+        },
+        {
+          "sw": "Nyaraka nyingine kama zinavyoelekezwa kwenye mwongozo wa mwaka husika",
+          "en": "Other documents as listed in that year's guidelines"
+        }
+      ],
+      "steps": [
+        {
+          "sw": "Soma mwongozo wa mwaka husika kwenye tovuti ya HESLB.",
+          "en": "Read that year's guidelines on the HESLB website."
+        },
+        {
+          "sw": "Fungua OLAMS na ufungue akaunti.",
+          "en": "Open OLAMS and create an account."
+        },
+        {
+          "sw": "Lipa ada ya maombi kwa control number inayotolewa na mfumo pekee.",
+          "en": "Pay the application fee using only the system-generated control number."
+        },
+        {
+          "sw": "Jaza fomu, pakia nyaraka na uwasilishe kabla ya tarehe ya mwisho.",
+          "en": "Complete the form, upload documents and submit before the deadline."
+        },
+        {
+          "sw": "Fuatilia hali ya ombi kwenye akaunti yako ya OLAMS.",
+          "en": "Track the status in your OLAMS account."
+        }
+      ],
+      "fees": [
+        {
+          "label": {
+            "sw": "Ada ya maombi, shahada ya kwanza 2026/2027 (hairudishwi)",
+            "en": "Application fee, bachelor's 2026/2027 (non-refundable)"
+          },
+          "amount": "TZS 30,000",
+          "source": "https://www.heslb.go.tz/images/storage/downloads/1781868431_2-bachelor-degree-guidelines-for-2026-2027.pdf"
+        }
+      ],
+      "feeNote": {
+        "sw": "Dirisha la maombi 2026/2027 lilikuwa 19 Juni hadi 31 Agosti 2026. Hakiki tarehe mpya kwenye HESLB.",
+        "en": "The 2026/2027 window ran 19 June to 31 August 2026. Check HESLB for new dates."
+      },
+      "keywords": [
+        "heslb",
+        "mkopo",
+        "loan",
+        "olams",
+        "olas",
+        "chuo kikuu",
+        "university",
+        "elimu ya juu",
+        "student loan",
+        "bodi ya mikopo"
+      ],
+      "contacts": [],
+      "lastChecked": "2026-10-14"
+    },
+    {
+      "slug": "necta-matokeo",
+      "agency": "NECTA",
+      "category": "elimu",
+      "icon": "results",
+      "popular": true,
+      "title": {
+        "sw": "Matokeo ya mitihani (NECTA)",
+        "en": "Exam results (NECTA)"
+      },
+      "summary": {
+        "sw": "Angalia matokeo ya CSEE (kidato cha nne), ACSEE (kidato cha sita) na mitihani mingine.",
+        "en": "Check CSEE (Form Four), ACSEE (Form Six) and other exam results."
+      },
+      "officialUrl": "https://www.necta.go.tz/results/view/acsee",
+      "sources": ["https://www.necta.go.tz/results/view/acsee", "https://matokeo.necta.go.tz/"],
+      "documents": [
+        {
+          "sw": "Namba ya mtahiniwa na jina la kituo/shule",
+          "en": "Candidate number and centre/school name"
+        }
+      ],
+      "steps": [
+        {
+          "sw": "Fungua ukurasa wa matokeo wa NECTA.",
+          "en": "Open NECTA's results page."
+        },
+        {
+          "sw": "Chagua mtihani (mf. CSEE au ACSEE) na mwaka.",
+          "en": "Choose the exam (e.g. CSEE or ACSEE) and year."
+        },
+        {
+          "sw": "Tafuta kituo/shule yako kwenye orodha.",
+          "en": "Find your centre/school in the list."
+        },
+        {
+          "sw": "Tafuta namba yako ya mtahiniwa kuona matokeo.",
+          "en": "Find your candidate number to see the results."
+        }
+      ],
+      "feeNote": {
+        "sw": "Kuangalia matokeo mtandaoni hakuna ada iliyoonyeshwa.",
+        "en": "No fee is listed for viewing results online."
+      },
+      "keywords": [
+        "necta",
+        "matokeo",
+        "results",
+        "kidato cha nne",
+        "kidato cha sita",
+        "csee",
+        "acsee",
+        "psle",
+        "mtihani",
+        "exam"
+      ],
+      "fees": [],
+      "contacts": [],
+      "lastChecked": "2026-10-14"
+    },
+    {
+      "slug": "tanesco-luku",
+      "agency": "TANESCO",
+      "category": "nishati-maji",
+      "icon": "power",
+      "popular": true,
+      "title": {
+        "sw": "Umeme: LUKU na kuunganishiwa (TANESCO)",
+        "en": "Electricity: LUKU and new connection (TANESCO)"
+      },
+      "summary": {
+        "sw": "Nunua LUKU kwa simu au benki, na omba kuunganishiwa umeme kupitia NIKONEKT.",
+        "en": "Buy LUKU by mobile money or bank, and apply for a new connection on NIKONEKT."
+      },
+      "officialUrl": "https://nikonekt.tanesco.co.tz/",
+      "sources": ["https://nikonekt.tanesco.co.tz/", "https://tanesco.co.tz/"],
+      "documents": [
+        {
+          "sw": "Namba ya mita (kwa LUKU)",
+          "en": "Meter number (for LUKU)"
+        },
+        {
+          "sw": "Kitambulisho na taarifa za eneo/nyumba (kwa kuunganishiwa)",
+          "en": "ID and property details (for a connection)"
+        }
+      ],
+      "steps": [
+        {
+          "sw": "LUKU: tumia menyu ya malipo ya mtandao wako wa simu au benki, weka namba ya mita na kiasi; utapokea tokeni.",
+          "en": "LUKU: use your mobile money or bank payments menu, enter the meter number and amount; you receive a token."
+        },
+        {
+          "sw": "Weka tokeni kwenye mita yako.",
+          "en": "Enter the token on your meter."
+        },
+        {
+          "sw": "Kuunganishiwa: fungua NIKONEKT na uchague 'New Application'.",
+          "en": "New connection: open NIKONEKT and choose 'New Application'."
+        },
+        {
+          "sw": "Jaza matumizi, kundi, aina ya mwombaji na kitambulisho, kisha taarifa za eneo.",
+          "en": "Enter purpose, category, applicant type and ID, then the property details."
+        },
+        {
+          "sw": "Fuatilia ombi kwa namba ya ombi na namba ya simu.",
+          "en": "Track it with your application number and phone number."
+        }
+      ],
+      "feeNote": {
+        "sw": "Gharama za kuunganishiwa hutolewa na TANESCO baada ya ombi; Lango haionyeshi kiasi.",
+        "en": "Connection costs are quoted by TANESCO after you apply; Lango does not show an amount."
+      },
+      "keywords": ["tanesco", "luku", "umeme", "electricity", "tokeni", "token", "mita", "meter", "nikonekt", "power"],
+      "fees": [],
+      "contacts": [],
+      "lastChecked": "2026-10-14"
+    },
+    {
+      "slug": "bili-maji",
+      "agency": "DAWASA",
+      "category": "nishati-maji",
+      "icon": "water",
+      "title": {
+        "sw": "Bili ya maji na kuunganishiwa (DAWASA)",
+        "en": "Water bills and connection (DAWASA)"
+      },
+      "summary": {
+        "sw": "Lipa bili ya maji kwa control number na omba huduma ya maji Dar es Salaam. Mikoa mingine: mamlaka ya maji ya eneo lako.",
+        "en": "Pay water bills with a control number and apply for water in Dar es Salaam. Other regions: your local water authority."
+      },
+      "officialUrl": "https://www.dawasa.go.tz/pages/how-to-pay",
+      "sources": [
+        "https://www.dawasa.go.tz/pages/how-to-pay",
+        "https://www.dawasa.go.tz/announcements/nyaraka-muhimu-za-kuambatanisha-wakati-wa-kuomba-huduma-ya-majisafi"
+      ],
+      "documents": [
+        {
+          "sw": "Bili yenye control number (huanza na 99104)",
+          "en": "Bill with control number (starts 99104)"
+        },
+        {
+          "sw": "Kwa kuunganishiwa: fomu ya maombi na nyaraka za umiliki",
+          "en": "For a connection: application form and ownership documents"
+        }
+      ],
+      "steps": [
+        {
+          "sw": "Pata control number kwenye bili au SMS baada ya kusomwa mita.",
+          "en": "Find the control number on your bill or the SMS after meter reading."
+        },
+        {
+          "sw": "Lipa kupitia simu, benki au njia za malipo ya serikali.",
+          "en": "Pay through mobile money, bank or government payment channels."
+        },
+        {
+          "sw": "Kuunganishiwa: jaza fomu ya DAWASA na ambatisha nyaraka za umiliki.",
+          "en": "Connection: fill in the DAWASA form and attach ownership documents."
+        },
+        {
+          "sw": "DAWASA watapima eneo na kukupa makadirio ya gharama.",
+          "en": "DAWASA surveys the site and quotes the cost."
+        }
+      ],
+      "feeNote": {
+        "sw": "Gharama za kuunganishiwa hukadiriwa baada ya kupima eneo.",
+        "en": "Connection costs are quoted after the site survey."
+      },
+      "keywords": ["maji", "water", "dawasa", "bili ya maji", "water bill", "ruwasa", "mamlaka ya maji"],
+      "fees": [],
+      "contacts": [],
+      "lastChecked": "2026-10-14"
+    },
+    {
+      "slug": "e-mrejesho",
+      "agency": "e-GA",
+      "category": "msaada",
+      "icon": "chat",
+      "title": {
+        "sw": "Toa malalamiko au maoni (e-Mrejesho)",
+        "en": "Complaints and feedback (e-Mrejesho)"
+      },
+      "summary": {
+        "sw": "Wasilisha malalamiko, maoni, maulizo au pongezi kwa taasisi za umma na ufuatilie majibu.",
+        "en": "Send complaints, suggestions, questions or praise to public institutions and track the reply."
+      },
+      "officialUrl": "https://emrejesho.gov.go.tz/",
+      "sources": ["https://www.ega.go.tz/news/e-mrejesho-ni-suluhisho-la-kero-za-wananchi"],
+      "documents": [
+        {
+          "sw": "Maelezo ya tatizo na taasisi husika",
+          "en": "A description of the issue and the institution"
+        }
+      ],
+      "steps": [
+        {
+          "sw": "Fungua tovuti ya e-Mrejesho au app ya e-Mrejesho.",
+          "en": "Open the e-Mrejesho website or app."
+        },
+        {
+          "sw": "Au piga *152*00#, chagua 9 kisha 2 na ufuate maelekezo.",
+          "en": "Or dial *152*00#, choose 9 then 2 and follow the prompts."
+        },
+        {
+          "sw": "Chagua taasisi, aina ya mrejesho na eleza tatizo.",
+          "en": "Choose the institution and feedback type and describe the issue."
+        },
+        {
+          "sw": "Hifadhi namba ya kumbukumbu kufuatilia jibu.",
+          "en": "Keep the reference number to track the reply."
+        }
+      ],
+      "feeNote": {
+        "sw": "Hakuna ada iliyoonyeshwa.",
+        "en": "No fee is listed."
+      },
+      "contacts": [
+        {
+          "label": "USSD",
+          "value": "*152*00#",
+          "href": "tel:*152*00%23"
+        }
+      ],
+      "keywords": ["malalamiko", "complaint", "e-mrejesho", "mrejesho", "maoni", "feedback", "kero", "lalamika"],
+      "fees": [],
+      "lastChecked": "2026-10-14"
+    },
+    {
+      "slug": "dharura-polisi",
+      "agency": "Polisi",
+      "category": "msaada",
+      "icon": "siren",
+      "popular": true,
+      "title": {
+        "sw": "Namba za dharura na Polisi",
+        "en": "Emergency numbers and Police"
+      },
+      "summary": {
+        "sw": "Namba za bure za dharura: Polisi 112, Zimamoto 114, Gari la wagonjwa 115.",
+        "en": "Free emergency numbers: Police 112, Fire 114, Ambulance 115."
+      },
+      "officialUrl": "https://polisi.go.tz/",
+      "sources": [
+        "https://www.tcra.go.tz/tcra-tovuti/2025/mamlaka-website/documents/communication-sector-guidbooks-and-plans/en_1751634705_National_Numbering_and_Signaling_Point_Code_Plans_edition_of_2025_f06646e5f3.pdf",
+        "https://polisi.go.tz/"
+      ],
+      "documents": [],
+      "steps": [
+        {
+          "sw": "Piga 112 kwa dharura au Polisi.",
+          "en": "Call 112 for emergencies or Police."
+        },
+        {
+          "sw": "Piga 114 kwa moto, 115 kwa gari la wagonjwa.",
+          "en": "Call 114 for fire, 115 for an ambulance."
+        },
+        {
+          "sw": "Mali iliyopotea: tumia mfumo wa Polisi wa LORMIS kwenye tovuti ya Polisi.",
+          "en": "Lost property: use the Police LORMIS system on the Police website."
+        },
+        {
+          "sw": "Hati ya tabia njema (PCC): tumia huduma ya PCC kwenye tovuti ya Polisi.",
+          "en": "Police clearance (PCC): use the PCC service on the Police website."
+        }
+      ],
+      "feeNote": {
+        "sw": "Simu za dharura ni bure.",
+        "en": "Emergency calls are free."
+      },
+      "keywords": [
+        "polisi",
+        "police",
+        "dharura",
+        "emergency",
+        "112",
+        "zimamoto",
+        "fire",
+        "ambulance",
+        "gari la wagonjwa",
+        "msaada",
+        "pcc",
+        "lormis"
+      ],
+      "fees": [],
+      "contacts": [],
+      "lastChecked": "2026-10-14"
+    },
+    {
+      "slug": "gepg-malipo",
+      "agency": "Wizara ya Fedha",
+      "category": "malipo",
+      "icon": "pay",
+      "popular": true,
+      "title": {
+        "sw": "Malipo ya serikali (GePG / control number)",
+        "en": "Government payments (GePG / control number)"
+      },
+      "summary": {
+        "sw": "Lipa ada au bili yoyote ya serikali kwa control number kupitia simu, benki au app ya GePG.",
+        "en": "Pay any government fee or bill with a control number via mobile money, bank or the GePG app."
+      },
+      "officialUrl": "https://epay.gepg.go.tz/",
+      "sources": ["https://www.gepg.go.tz/faq/"],
+      "documents": [
+        {
+          "sw": "Control number kutoka kwa taasisi inayokudai",
+          "en": "The control number from the institution billing you"
+        }
+      ],
+      "steps": [
+        {
+          "sw": "Pata control number kutoka kwa taasisi (mfano NIDA, Uhamiaji, RITA).",
+          "en": "Get a control number from the institution (e.g. NIDA, Immigration, RITA)."
+        },
+        {
+          "sw": "Kwenye simu chagua huduma za serikali/malipo ya serikali, au tumia GePG portal/app.",
+          "en": "On your phone choose government payments, or use the GePG portal/app."
+        },
+        {
+          "sw": "Weka control number, hakiki jina la taasisi na kiasi, kisha lipa.",
+          "en": "Enter the control number, check the institution and amount, then pay."
+        },
+        {
+          "sw": "Hifadhi risiti. Usipopata control number, wasiliana kwanza na taasisi husika.",
+          "en": "Keep the receipt. If you didn't get a control number, contact the institution first."
+        }
+      ],
+      "feeNote": {
+        "sw": "Kiasi kinaamuliwa na taasisi iliyotoa control number.",
+        "en": "The amount is set by the institution that issued the control number."
+      },
+      "keywords": [
+        "gepg",
+        "control number",
+        "malipo",
+        "payment",
+        "lipa",
+        "pay",
+        "kumbukumbu namba",
+        "malipo ya serikali",
+        "bill"
+      ],
+      "fees": [],
+      "contacts": [],
+      "lastChecked": "2026-10-14"
+    }
+  ],
+  "emergency": [
+    {
+      "number": "112",
+      "label": {
+        "sw": "Polisi / dharura",
+        "en": "Police / emergency"
+      }
+    },
+    {
+      "number": "114",
+      "label": {
+        "sw": "Zimamoto",
+        "en": "Fire"
+      }
+    },
+    {
+      "number": "115",
+      "label": {
+        "sw": "Gari la wagonjwa",
+        "en": "Ambulance"
+      }
+    },
+    {
+      "number": "116",
+      "label": {
+        "sw": "Msaada kwa mtoto",
+        "en": "Child helpline"
+      }
+    },
+    {
+      "number": "113",
+      "label": {
+        "sw": "TAKUKURU (rushwa)",
+        "en": "PCCB (corruption)"
+      }
+    },
+    {
+      "number": "111",
+      "label": {
+        "sw": "Kuzuia uhalifu",
+        "en": "Crime stoppers"
+      }
+    }
+  ],
+  "offices": [
+    {
+      "agency": "NIDA",
+      "name": {
+        "sw": "Makao Makuu NIDA, Barabara ya Kilimani, Dar es Salaam",
+        "en": "NIDA HQ, Kilimani Road, Dar es Salaam"
+      },
+      "region": "Dar es Salaam",
+      "phone": "023 221 0500",
+      "hours": {
+        "sw": "Jumatatu–Ijumaa, 7:30–15:30",
+        "en": "Mon–Fri, 07:30–15:30"
+      },
+      "source": "https://www.nida.go.tz/",
+      "note": {
+        "sw": "Usajili hukamilishwa ofisi ya NIDA ya wilaya yako.",
+        "en": "Registration is completed at your district NIDA office."
+      }
+    },
+    {
+      "agency": "RITA",
+      "name": {
+        "sw": "RITA Tower, 4 Mtaa wa Simu, Dar es Salaam",
+        "en": "RITA Tower, 4 Simu Street, Dar es Salaam"
+      },
+      "region": "Dar es Salaam",
+      "phone": "+255 22 292 4180",
+      "source": "https://www.rita.go.tz/erita.php?lang=en",
+      "note": {
+        "sw": "Ofisi za wilaya hushughulikia usajili wa vizazi.",
+        "en": "District offices handle birth registration."
+      }
+    },
+    {
+      "agency": "Polisi",
+      "name": {
+        "sw": "Makao Makuu ya Polisi, Dodoma",
+        "en": "Police HQ, Dodoma"
+      },
+      "region": "Dodoma",
+      "phone": "026 232 3585",
+      "source": "https://polisi.go.tz/"
+    },
+    {
+      "agency": "TRA",
+      "name": {
+        "sw": "Kituo cha simu TRA (bila malipo)",
+        "en": "TRA call centre (toll-free)"
+      },
+      "region": "Kitaifa",
+      "phone": "0800 750 075",
+      "source": "https://www.tra.go.tz/",
+      "note": {
+        "sw": "Ofisi za TRA zipo kila mkoa; tafuta ya karibu kwenye tovuti ya TRA.",
+        "en": "TRA has offices in every region; find the nearest on the TRA website."
+      }
+    }
+  ]
+}

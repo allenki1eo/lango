@@ -1,26 +1,30 @@
 import { useTranslations } from "next-intl";
 import { LocaleLink } from "./locale-link";
 
+/** Lango wordmark: a doorway (lango = gate) with the Hanki saffron diamond as the keystone. */
 export function BrandMark() {
   const t = useTranslations("Common");
-
   return (
     <LocaleLink
       href="/"
-      className="inline-flex min-h-11 items-center gap-2.5 font-display text-[1.45rem] leading-none font-extrabold tracking-[-0.02em] no-underline"
+      className="inline-flex min-h-11 items-center gap-2.5 font-display text-[1.5rem] leading-none font-extrabold tracking-[-0.02em] no-underline"
     >
-      <svg
-        viewBox="0 0 32 32"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth={3}
-        strokeLinecap="round"
-        aria-hidden="true"
-        focusable="false"
-        className="size-[30px] text-sun"
-      >
-        <path d="M5 29V15a11 11 0 0 1 22 0v14" />
-        <path d="M12 29V16a4 4 0 0 1 8 0v13" />
+      <svg viewBox="0 0 32 32" aria-hidden="true" focusable="false" className="size-[30px]">
+        <path
+          d="M6 29V14a10 10 0 0 1 20 0v15"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="3.2"
+          strokeLinecap="round"
+        />
+        <path d="M16 8.5 20 12.5 16 16.5 12 12.5Z" fill="var(--sun)" />
+        <path
+          d="M12.5 29v-7a3.5 3.5 0 0 1 7 0v7"
+          fill="none"
+          stroke="var(--teal-light)"
+          strokeWidth="3.2"
+          strokeLinecap="round"
+        />
       </svg>
       {t("brand")}
     </LocaleLink>

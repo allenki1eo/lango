@@ -1,8 +1,8 @@
 {
   "Metadata": {
-    "title": "Lango: huduma za serikali mahali pamoja",
+    "title": "Lango: huduma za serikali Tanzania mahali pamoja",
     "titleTemplate": "%s · Lango",
-    "description": "Andika unachohitaji kwa maneno yako. Lango inakuonyesha tovuti sahihi ya serikali, nyaraka za kuandaa na hatua za kufuata."
+    "description": "Uliza kwa Kiswahili au Kiingereza, au chagua huduma: NIDA, pasipoti, TIN, BRELA, RITA, leseni, NHIF, NSSF, HESLB, NECTA, LUKU na zaidi. Hatua, ada zilizothibitishwa na kiungo rasmi."
   },
   "Common": {
     "brand": "Lango",
@@ -16,41 +16,23 @@
   },
   "Hero": {
     "title": "Unataka kufanya nini leo?",
-    "subtitle": "Andika kwa maneno yako. Tutakuonyesha tovuti sahihi ya serikali na hatua za kufuata."
+    "subtitle": "Uliza kwa maneno yako, au gusa huduma hapa chini. Tunakuonyesha hatua, nyaraka na tovuti rasmi."
   },
   "Search": {
-    "label": "Andika huduma unayotafuta",
-    "placeholder": "Mf. leseni ya udereva",
-    "submit": "Tafuta",
+    "label": "Uliza swali au andika huduma",
+    "placeholder": "Mf. Nataka kupata kitambulisho cha NIDA",
+    "submit": "Uliza",
     "tryLabel": "Jaribu:",
-    "examples": ["Leseni ya udereva", "Sajili biashara", "Matokeo ya NECTA", "Mkopo wa HESLB"]
-  },
-  "HowItWorks": {
-    "title": "Inavyofanya kazi",
-    "lede": "Lango ni mwongozo. Hatukamilishi ombi lako, tunakuonyesha njia sahihi.",
-    "steps": [
-      {
-        "title": "Andika unachohitaji",
-        "body": "Kwa Kiswahili, Kiingereza au mchanganyiko. Hakuna haja ya kujua jina la taasisi."
-      },
-      {
-        "title": "Andaa nyaraka na ufuate hatua",
-        "body": "Tunakuonyesha nyaraka za kuandaa na hatua kwa mpangilio, na maendeleo yako yanabaki kwenye simu yako."
-      },
-      {
-        "title": "Maliza kwenye tovuti rasmi",
-        "body": "Kitufe kimoja kinakupeleka moja kwa moja kwenye tovuti ya taasisi husika."
-      }
+    "examples": [
+      "Nataka kupata kitambulisho cha NIDA",
+      "Pasipoti inagharimu kiasi gani?",
+      "Sajili biashara",
+      "Matokeo ya NECTA"
     ]
   },
-  "Trust": {
-    "title": "Taarifa zako zinabaki kwako",
-    "body": "Hatuombi nenosiri lako, namba ya NIDA wala namba ya simu. Unaingia moja kwa moja kwenye tovuti rasmi ya serikali."
-  },
   "SearchPage": {
-    "title": "Tafuta huduma",
-    "comingSoonTitle": "Utafutaji unakuja hivi karibuni",
-    "comingSoonBody": "Tunaandaa orodha ya huduma zilizothibitishwa. Rudi baadaye kidogo.",
+    "title": "Matokeo",
+    "noResults": "Hakuna huduma iliyopatikana kwa \"{query}\".",
     "youSearched": "Ulitafuta: {query}",
     "back": "Rudi mwanzo"
   },
@@ -61,6 +43,44 @@
   },
   "Footer": {
     "disclaimer": "Lango ni mwongozo huru, si tovuti ya serikali. Hakiki kila hatua kwenye tovuti ya taasisi husika kabla ya kulipa au kuwasilisha.",
-    "privacy": "Maendeleo ya hatua zako yanahifadhiwa kwenye kifaa chako pekee."
+    "privacy": "Maendeleo ya hatua zako yanahifadhiwa kwenye kifaa chako pekee.",
+    "by": "na Hanki Technologies"
+  },
+  "Ask": {
+    "thinking": "Lango inatafuta…",
+    "error": "Samahani, kuna tatizo. Jaribu tena.",
+    "rate": "Maswali mengi kwa muda mfupi. Subiri dakika moja.",
+    "noMatch": "Sijapata huduma inayolingana. Jaribu maneno mengine au chagua kundi hapa chini.",
+    "fromSearch": "Matokeo ya utafutaji",
+    "aiNote": "Majibu ya msaidizi yanatoka kwenye taarifa zilizothibitishwa za Lango tu. Hakiki kwenye tovuti rasmi.",
+    "related": "Huduma zinazohusiana",
+    "offices": "Ofisi na mawasiliano",
+    "viewGuide": "Fungua mwongozo kamili"
+  },
+  "Home": {
+    "categories": "Chagua huduma",
+    "popular": "Zinazotafutwa zaidi",
+    "emergency": "Dharura? Piga bure",
+    "allServices": "Huduma zote",
+    "callLabel": "Piga {number}"
+  },
+  "Guide": {
+    "official": "Fungua tovuti rasmi",
+    "documents": "Nyaraka za kuandaa",
+    "steps": "Hatua za kufuata",
+    "stepsHint": "Weka alama kila hatua ukimaliza. Inahifadhiwa kwenye simu yako tu.",
+    "fees": "Ada",
+    "feeSource": "Chanzo",
+    "noFees": "Ada haijathibitishwa",
+    "contacts": "Mawasiliano",
+    "sources": "Vyanzo rasmi",
+    "lastChecked": "Imekaguliwa mwisho: {date}",
+    "agency": "Taasisi",
+    "done": "{done} kati ya {total} zimekamilika",
+    "reset": "Anza upya"
+  },
+  "Services": {
+    "title": "Huduma zote",
+    "lede": "Miongozo iliyothibitishwa kutoka tovuti rasmi za serikali."
   }
 }

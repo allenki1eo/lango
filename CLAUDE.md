@@ -8,7 +8,7 @@ A Swahili-first guide to Tanzanian government online services. Users describe a 
 
 ## Stack
 
-Next.js 16 (App Router) + TypeScript strict, Tailwind + shadcn/ui, Turso (libSQL) + Drizzle ORM, Auth.js v5 (magic links via Resend), next-intl, Zod, MiniSearch, Anthropic API, Vercel. Package manager: pnpm.
+Next.js 16 (App Router) + TypeScript strict, Tailwind + shadcn/ui, Turso (libSQL) + Drizzle ORM, Auth.js v5 (magic links via Resend), next-intl, Zod, MiniSearch, OpenRouter (free tool-calling models), Vercel. Package manager: pnpm.
 
 ## Commands
 
@@ -32,8 +32,8 @@ Run `pnpm typecheck && pnpm lint && pnpm test` before declaring any task done.
 
 ## Rules that must not be broken
 
-1. **Content comes from the database only.** Never hardcode steps, fees, requirements or URLs for a government service in code. The AI never generates them either.
-2. **AI search picks, it does not write.** The model receives a candidate list and returns an id from that list or null. The server rejects any id not in the list. Always keep the local-search fallback working when `AI_ENABLED=false` or the API fails.
+1. **Content comes from the catalog only** (`src/data/catalog.json` today; the database once the admin panel lands). Never hardcode steps, fees, requirements or URLs for a government service in code. The AI never generates them either.
+2. **AI picks, it does not write.** The model may only call catalog tools; every card (steps, fees, links) is built server-side from the catalog, never from model text. The model's short reply must not state facts the tools didn't return. Always keep the local-search fallback working when `AI_ENABLED=false` or the API fails.
 3. **Redact before logging or sending.** Every query passes through `lib/search/redact.ts` before it touches `search_logs`, `ai_cache` or the AI.
 4. **Official links are allowlisted.** An `official_url` must be on its agency's domain or a subdomain. Validate in Zod and on save.
 5. **Public visibility means `status = 'published'`.** Every public query filters on it.

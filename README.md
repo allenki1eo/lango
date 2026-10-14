@@ -8,6 +8,13 @@ Lango never collects credentials, never embeds government portals and never proc
 - How it's built: [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md)
 - Rules and conventions for contributors and AI agents: [`CLAUDE.md`](CLAUDE.md)
 
+## Current build (v0.2, October 2026)
+
+- Ask box: plain Swahili/English questions go to `/api/ask`, which uses a free OpenRouter tool-calling model (`src/lib/ai/openrouter.ts`) over the curated catalog. Keyword cards appear instantly; if the model fails or is rate-limited, keyword search answers instead.
+- 16 verified guides at `/sw/huduma/<slug>` and `/en/huduma/<slug>`, statically rendered, each with official sources, verified fees only and a last-checked date.
+- Content: `src/data/catalog.json` (see [`docs/CONTENT.md`](docs/CONTENT.md)). The Turso/Drizzle schema stays for the planned admin panel (M2) but is not needed to deploy.
+- Env: `OPENROUTER_API_KEY` (optional; without it Lango runs on keyword search), `AI_MODELS`, `AI_ENABLED`, `NEXT_PUBLIC_SITE_URL`.
+
 ## Getting started
 
 Requires Node.js 22.9 or later and pnpm 10.
