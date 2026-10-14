@@ -58,31 +58,37 @@ export function AskBox({
     setBusy(true);
     setErr("");
     setAnswer(null);
-    const post = (fast: boolean) =>
-      fetch("/api/ask", {
+    let got = false;
+    try {
+      // Server-Sent Events: instant keyword cards first, then the assistant's answer.
+      const res = await fetch("/api/ask", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ q: question, locale, fast }),
+        body: JSON.stringify({ q: question, locale, stream: true }),
       });
-    let shown = false;
-    // Instant keyword cards first, then the assistant's answer replaces them when it arrives.
-    post(true)
-      .then(async (r) => {
-        if (r.ok && !shown) {
-          const d = await r.json();
-          if (!shown) setAnswer({ q: question, ...d });
-        }
-      })
-      .catch(() => {});
-    try {
-      const res = await post(false);
       if (res.status === 429) throw new Error("rate");
-      if (!res.ok) throw new Error("err");
-      const d = await res.json();
-      shown = true;
-      setAnswer({ q: question, ...d, text: String(d.text ?? "").replace(/\*\*|__|`/g, "") });
+      if (!res.ok || !res.body) throw new Error("err");
+      const reader = res.body.getReader();
+      const dec = new TextDecoder();
+      let buf = "";
+      for (;;) {
+        const { value, done } = await reader.read();
+        if (done) break;
+        buf += dec.decode(value, { stream: true });
+        let i;
+        while ((i = buf.indexOf("\n\n")) >= 0) {
+          const chunk = buf.slice(0, i);
+          buf = buf.slice(i + 2);
+          const ev = /^event: (\w+)/m.exec(chunk)?.[1];
+          const data = /^data: (.*)$/m.exec(chunk)?.[1];
+          if (!data || (ev !== "cards" && ev !== "answer")) continue;
+          const d = JSON.parse(data);
+          got = true;
+          setAnswer({ q: question, ...d, text: String(d.text ?? "").replace(/\*\*|__|`/g, "") });
+        }
+      }
     } catch (e) {
-      if (!shown) setErr(e instanceof Error && e.message === "rate" ? copy.rate : copy.error);
+      if (!got) setErr(e instanceof Error && e.message === "rate" ? copy.rate : copy.error);
     } finally {
       setBusy(false);
       requestAnimationFrame(() => out.current?.focus());
@@ -167,7 +173,7 @@ export function AskBox({
         {answer ? (
           <section className="mt-6 max-w-[760px] space-y-3 rounded-[22px] bg-surface p-4 text-ink shadow-float sm:p-6">
             <p className="text-sm text-muted">“{answer.q}”</p>
-            {answer.text ? <p className="text-[1.05rem] leading-relaxed">{answer.text}</p> : null}
+            {answer.text ? <p className="text-[1.05rem] leading-relaxed whitespace-pre-line">{answer.text}</p> : null}
             {!g ? (
               <p>{copy.noMatch}</p>
             ) : (
