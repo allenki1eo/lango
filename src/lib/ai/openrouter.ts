@@ -65,7 +65,12 @@ async function call(model: string, messages: Msg[], withTools: boolean, ms: numb
       temperature: 0.2,
     }),
   });
-  if (!res.ok) throw new Error(`http-${res.status}`);
+  if (!res.ok) {
+    const body = await res.text().catch(() => "");
+    // The account-wide free quota (50/day without credits) applies to every model: no point trying others.
+    if (body.includes("free-models-per-day")) throw new Error("daily-limit");
+    throw new Error(`http-${res.status}`);
+  }
   const data = (await res.json()) as { choices?: { message: Msg }[]; error?: { code?: number } };
   const msg = data.choices?.[0]?.message;
   if (!msg) throw new Error(`empty${data.error?.code ? `-${data.error.code}` : ""}`);
@@ -134,6 +139,7 @@ export async function ask(
       return { text, events, model, attempts: [...attempts, `${model}:ok-tools`] };
     } catch (e) {
       attempts.push(`${model}:${reason(e)}`);
+      if (reason(e) === "daily-limit") break;
     }
   }
   const err = new Error("all-models-failed");
