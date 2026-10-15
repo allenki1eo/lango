@@ -7,7 +7,8 @@
   "Common": {
     "brand": "Lango",
     "skipToContent": "Skip to content",
-    "home": "Home"
+    "home": "Home",
+    "breadcrumb": "You are here"
   },
   "Language": {
     "label": "Language",
@@ -39,7 +40,12 @@
   "Footer": {
     "disclaimer": "Lango is an independent guide, not a government website. Check every step on the agency's site before paying or submitting.",
     "privacy": "Your step progress is stored on your device only.",
-    "by": "by Hanki Technologies"
+    "by": "by Hanki Technologies",
+    "top": "Back to top",
+    "tagline": "Tanzanian government services, easier to find.",
+    "topics": "Service topics",
+    "popular": "Most searched",
+    "emergency": "Emergency numbers"
   },
   "Ask": {
     "thinking": "Lango is looking…",
@@ -50,14 +56,21 @@
     "aiNote": "The assistant only answers from Lango's verified data. Check the official site.",
     "related": "Related services",
     "offices": "Offices and contacts",
-    "viewGuide": "Open the full guide"
+    "viewGuide": "Open the full guide",
+    "aiBadge": "AI assistant",
+    "aiIntro": "AI helps you find the right service. Every step, fee and link comes from official sources we have checked."
   },
   "Home": {
     "categories": "Choose a service",
     "popular": "Most searched",
     "emergency": "Emergency? Call free",
     "allServices": "All services",
-    "callLabel": "Call {number}"
+    "callLabel": "Call {number}",
+    "topics": "Services by topic",
+    "topicsLede": "Pick a topic, then the service you need. Every guide lists documents, steps, fees and the official link.",
+    "popularLede": "The services people look for most often.",
+    "jump": "Jump to all topics",
+    "seeAll": "See all services"
   },
   "Guide": {
     "official": "Open the official site",
@@ -72,10 +85,30 @@
     "lastChecked": "Last checked: {date}",
     "agency": "Agency",
     "done": "{done} of {total} done",
-    "reset": "Start over"
+    "reset": "Start over",
+    "onThisPage": "On this page",
+    "leaving": "Opens {host} in a new window."
   },
   "Services": {
     "title": "All services",
-    "lede": "Verified guides from official government websites."
+    "lede": "Verified guides from official government websites.",
+    "jump": "Jump to a topic",
+    "count": "{count, plural, one {# service} other {# services}}"
+  },
+  "Banner": {
+    "text": "An independent guide to Tanzanian government services. Not a government website.",
+    "toggle": "How we keep you safe",
+    "linksTitle": "We only send you to the agency's own site",
+    "linksBody": "Every official link on Lango shows the site address (e.g. nida.go.tz). Check that your browser shows the same address before you enter any details.",
+    "privacyTitle": "We never ask for your personal details",
+    "privacyBody": "Lango will never ask for your NIN, phone number or password. Applications and payments happen on the official site only."
+  },
+  "Nav": {
+    "label": "Main menu",
+    "menu": "Menu",
+    "home": "Home",
+    "services": "All services",
+    "search": "Ask Lango",
+    "emergency": "Emergency"
   }
 }

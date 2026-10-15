@@ -5,7 +5,8 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { getPathname } from "@/lib/i18n/navigation";
 import { routing } from "@/lib/i18n/routing";
 import { readServerEnv } from "@/lib/env";
-import { bricolage, figtree } from "@/lib/fonts";
+import { TrustBanner } from "@/components/public/trust-banner";
+import { bricolage, publicSans } from "@/lib/fonts";
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
@@ -46,14 +47,15 @@ export default async function LocaleLayout({ children, params }: LayoutProps<"/[
   const t = await getTranslations({ locale, namespace: "Common" });
 
   return (
-    <html lang={locale} className={`${bricolage.variable} ${figtree.variable}`}>
-      <body>
+    <html lang={locale} className={`${bricolage.variable} ${publicSans.variable}`}>
+      <body id="top">
         <a
           href="#main"
           className="sr-only z-50 rounded-lg bg-sun px-4 py-3 font-semibold text-sun-ink focus:not-sr-only focus:fixed focus:top-3 focus:left-3"
         >
           {t("skipToContent")}
         </a>
+        <TrustBanner />
         {/* No NextIntlClientProvider: public client components receive their copy as props, keeping JS small. */}
         {children}
       </body>

@@ -7,7 +7,8 @@
   "Common": {
     "brand": "Lango",
     "skipToContent": "Ruka hadi maudhui",
-    "home": "Mwanzo"
+    "home": "Mwanzo",
+    "breadcrumb": "Ulipo sasa"
   },
   "Language": {
     "label": "Lugha",
@@ -44,7 +45,12 @@
   "Footer": {
     "disclaimer": "Lango ni mwongozo huru, si tovuti ya serikali. Hakiki kila hatua kwenye tovuti ya taasisi husika kabla ya kulipa au kuwasilisha.",
     "privacy": "Maendeleo ya hatua zako yanahifadhiwa kwenye kifaa chako pekee.",
-    "by": "na Hanki Technologies"
+    "by": "na Hanki Technologies",
+    "top": "Rudi juu",
+    "tagline": "Huduma za serikali ya Tanzania, rahisi kupata.",
+    "topics": "Makundi ya huduma",
+    "popular": "Zinazotafutwa zaidi",
+    "emergency": "Namba za dharura"
   },
   "Ask": {
     "thinking": "Lango inatafuta…",
@@ -55,14 +61,21 @@
     "aiNote": "Majibu ya msaidizi yanatoka kwenye taarifa zilizothibitishwa za Lango tu. Hakiki kwenye tovuti rasmi.",
     "related": "Huduma zinazohusiana",
     "offices": "Ofisi na mawasiliano",
-    "viewGuide": "Fungua mwongozo kamili"
+    "viewGuide": "Fungua mwongozo kamili",
+    "aiBadge": "Msaidizi wa AI",
+    "aiIntro": "AI inakusaidia kupata huduma sahihi. Hatua, ada na viungo vyote vinatoka kwenye vyanzo rasmi tulivyokagua."
   },
   "Home": {
     "categories": "Chagua huduma",
     "popular": "Zinazotafutwa zaidi",
     "emergency": "Dharura? Piga bure",
     "allServices": "Huduma zote",
-    "callLabel": "Piga {number}"
+    "callLabel": "Piga {number}",
+    "topics": "Huduma kwa makundi",
+    "topicsLede": "Chagua kundi, kisha huduma unayohitaji. Kila mwongozo una nyaraka, hatua, ada na kiungo rasmi.",
+    "popularLede": "Huduma ambazo watu hutafuta mara nyingi.",
+    "jump": "Ruka hadi makundi yote",
+    "seeAll": "Tazama huduma zote"
   },
   "Guide": {
     "official": "Fungua tovuti rasmi",
@@ -77,10 +90,30 @@
     "lastChecked": "Imekaguliwa mwisho: {date}",
     "agency": "Taasisi",
     "done": "{done} kati ya {total} zimekamilika",
-    "reset": "Anza upya"
+    "reset": "Anza upya",
+    "onThisPage": "Kwenye ukurasa huu",
+    "leaving": "Utafungua {host} kwenye dirisha jipya."
   },
   "Services": {
     "title": "Huduma zote",
-    "lede": "Miongozo iliyothibitishwa kutoka tovuti rasmi za serikali."
+    "lede": "Miongozo iliyothibitishwa kutoka tovuti rasmi za serikali.",
+    "jump": "Ruka hadi kundi",
+    "count": "{count, plural, one {huduma #} other {huduma #}}"
+  },
+  "Banner": {
+    "text": "Mwongozo huru wa huduma za serikali ya Tanzania. Si tovuti ya serikali.",
+    "toggle": "Jinsi tunavyokulinda",
+    "linksTitle": "Tunakupeleka kwenye tovuti ya taasisi pekee",
+    "linksBody": "Kila kiungo rasmi kwenye Lango kinaonyesha anwani ya tovuti (mf. nida.go.tz). Hakikisha kivinjari chako kinaonyesha anwani hiyo hiyo kabla ya kuweka taarifa zako.",
+    "privacyTitle": "Hatuombi taarifa zako binafsi",
+    "privacyBody": "Lango haitakuuliza NIN, namba ya simu wala nenosiri. Maombi na malipo hufanyika kwenye tovuti rasmi pekee."
+  },
+  "Nav": {
+    "label": "Menyu kuu",
+    "menu": "Menyu",
+    "home": "Mwanzo",
+    "services": "Huduma zote",
+    "search": "Uliza Lango",
+    "emergency": "Dharura"
   }
 }

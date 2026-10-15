@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState, type FormEvent } from "react";
+import { useRef, useState, type FormEvent, type ReactNode } from "react";
 import type { Cards } from "@/lib/ai/cards";
 import { Checklist } from "./checklist";
 import { Icon } from "./icon";
@@ -41,11 +41,14 @@ export function AskBox({
   action,
   copy,
   defaultValue = "",
+  note,
 }: {
   locale: string;
   action: string;
   copy: AskCopy;
   defaultValue?: string;
+  /** Server-rendered line under the box (the AI label), passed in so its copy stays off the client bundle. */
+  note?: ReactNode;
 }) {
   const [q, setQ] = useState(defaultValue);
   const [busy, setBusy] = useState(false);
@@ -108,7 +111,7 @@ export function AskBox({
         action={action}
         method="get"
         onSubmit={onSubmit}
-        className="relative flex max-w-[760px] gap-2 rounded-[22px] bg-surface p-2 text-ink shadow-float transition-shadow focus-within:shadow-[0_0_0_3px_var(--sun),var(--shadow-float)]"
+        className="relative flex max-w-[760px] gap-2 rounded-xl border-2 border-hero bg-surface p-1.5 text-ink shadow-card transition-shadow focus-within:shadow-[0_0_0_3px_var(--sun)] in-data-[surface=hero]:border-transparent in-data-[surface=hero]:shadow-float"
       >
         <span className="hidden place-items-center pl-3 text-teal sm:grid">
           <Icon name="sparkle" />
@@ -131,7 +134,7 @@ export function AskBox({
         <button
           type="submit"
           disabled={busy}
-          className="flex min-h-[52px] items-center gap-2 rounded-[16px] bg-sun px-5 font-display font-bold text-sun-ink transition hover:brightness-105 disabled:opacity-70 sm:px-7"
+          className="flex min-h-[52px] items-center gap-2 rounded-lg bg-sun px-5 font-display font-bold text-sun-ink transition hover:brightness-105 disabled:opacity-70 sm:px-7"
         >
           {busy ? (
             <span
@@ -144,8 +147,11 @@ export function AskBox({
           <span>{copy.submit}</span>
         </button>
       </form>
+      {note}
       <div className="mt-4 flex flex-wrap items-center gap-2">
-        <span className="mr-0.5 text-[0.9375rem] text-hero-muted">{copy.tryLabel}</span>
+        <span className="mr-0.5 text-[0.9375rem] text-muted in-data-[surface=hero]:text-hero-muted">
+          {copy.tryLabel}
+        </span>
         {copy.examples.map((ex) => (
           <a
             key={ex}
@@ -155,7 +161,7 @@ export function AskBox({
               setQ(ex);
               run(ex);
             }}
-            className="inline-flex min-h-11 items-center rounded-full border border-white/35 px-3.5 text-[0.9375rem] no-underline transition-colors hover:bg-white/12 sm:min-h-[38px]"
+            className="inline-flex min-h-11 items-center rounded-full border border-line bg-surface px-3.5 text-[0.9375rem] no-underline transition-colors hover:border-hero sm:min-h-[38px] in-data-[surface=hero]:border-white/35 in-data-[surface=hero]:bg-transparent in-data-[surface=hero]:hover:bg-white/12"
           >
             {ex}
           </a>
@@ -164,14 +170,21 @@ export function AskBox({
 
       <div ref={out} tabIndex={-1} aria-live="polite" className="outline-none">
         {busy ? (
-          <p className="mt-6 flex items-center gap-2 text-hero-muted">
+          <p className="mt-6 flex items-center gap-2 text-muted in-data-[surface=hero]:text-hero-muted">
             <span className="size-2 animate-ping rounded-full bg-sun" aria-hidden="true" />
             {copy.thinking}
           </p>
         ) : null}
-        {err ? <p className="mt-6 rounded-xl bg-surface p-4 text-ink">{err}</p> : null}
+        {err ? (
+          <p data-surface="light" className="mt-6 rounded-lg border border-line bg-surface p-4 text-ink">
+            {err}
+          </p>
+        ) : null}
         {answer ? (
-          <section className="mt-6 max-w-[760px] space-y-3 rounded-[22px] bg-surface p-4 text-ink shadow-float sm:p-6">
+          <section
+            data-surface="light"
+            className="mt-6 max-w-[760px] space-y-3 rounded-xl border border-line bg-surface p-4 text-ink shadow-float sm:p-6"
+          >
             <p className="text-sm text-muted">“{answer.q}”</p>
             {answer.text ? <p className="text-[1.05rem] leading-relaxed whitespace-pre-line">{answer.text}</p> : null}
             {!g ? (
@@ -193,7 +206,7 @@ export function AskBox({
                   href={g.officialUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex min-h-12 items-center justify-center gap-2 rounded-xl bg-teal px-4 font-semibold text-white no-underline hover:brightness-110"
+                  className="flex min-h-12 items-center justify-center gap-2 rounded-lg bg-hero px-4 font-semibold text-hero-ink no-underline hover:brightness-125"
                 >
                   {copy.official} <Icon name="external" />{" "}
                   <span className="truncate text-sm font-normal">{new URL(g.officialUrl).hostname}</span>
@@ -243,7 +256,7 @@ export function AskBox({
                 </p>
                 <a
                   href={`${prefix}/huduma/${g.slug}`}
-                  className="inline-flex min-h-11 items-center gap-1 font-semibold text-teal"
+                  className="link inline-flex min-h-11 items-center gap-1 font-semibold"
                 >
                   {copy.viewGuide} <Icon name="chevron" />
                 </a>
@@ -276,7 +289,7 @@ export function AskBox({
                     <a
                       key={s.slug}
                       href={`${prefix}/huduma/${s.slug}`}
-                      className="flex min-h-12 items-center gap-2 rounded-xl border border-line p-3 no-underline hover:border-teal"
+                      className="flex min-h-12 items-center gap-2 rounded-lg border border-line p-3 no-underline hover:border-hero"
                     >
                       <Icon name={s.icon} className="text-teal" />
                       <span className="font-medium">{s.title}</span>

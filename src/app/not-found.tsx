@@ -1,10 +1,10 @@
 import Link from "next/link";
-import { bricolage, figtree } from "@/lib/fonts";
+import { bricolage, publicSans } from "@/lib/fonts";
 
 // Fallback for paths outside the locale routes. Locale pages use [locale]/not-found.tsx instead.
 export default function GlobalNotFound() {
   return (
-    <html lang="sw" className={`${bricolage.variable} ${figtree.variable}`}>
+    <html lang="sw" className={`${bricolage.variable} ${publicSans.variable}`}>
       <body>
         <main className="wrap grid min-h-dvh content-center gap-2 py-16">
           <h1 className="font-display text-[2rem] leading-tight font-extrabold tracking-display">
