@@ -30,7 +30,7 @@ export function Checklist({ id, items, doneLabel, resetLabel }: Props) {
       <ol className="space-y-2">
         {items.map((step, i) => (
           <li key={i}>
-            <label className="flex min-h-11 cursor-pointer gap-3 rounded-xl border border-line bg-surface p-3 transition-colors has-[:checked]:border-ok has-[:checked]:bg-ok-soft">
+            <label className="flex min-h-11 cursor-pointer gap-3 rounded-lg border border-line bg-surface p-3 transition-colors has-[:checked]:border-ok has-[:checked]:bg-ok-soft">
               <input type="checkbox" checked={done[i]} onChange={() => toggle(i)} className="peer sr-only" />
               <span
                 aria-hidden="true"

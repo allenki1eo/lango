@@ -5,11 +5,13 @@
  * dark (unless the page forces light) or when the page forces dark with data-theme="dark".
  */
 :root {
-  --bg: #f5f2ea;
+  --bg: #ffffff;
+  --band: #f5f2ea;
   --surface: #ffffff;
   --ink: #1a1838;
-  --muted: #5b5874;
-  --line: #e2ddcf;
+  --muted: #55526e;
+  --line: #dfdacb;
+  --link: #2f2a9e;
   --hero: #1f1c5c;
   --hero-ink: #f5f2ea;
   --hero-muted: #c9c6e6;
@@ -24,7 +26,7 @@
   --focus: #1b6ef3;
   --ok: #0f7a52;
   --ok-soft: #e1f3ea;
-  --shadow-card: 0 1px 2px rgb(31 28 92 / 0.06), 0 12px 28px -18px rgb(31 28 92 / 0.35);
+  --shadow-card: 0 1px 2px rgb(31 28 92 / 0.06), 0 10px 24px -18px rgb(31 28 92 / 0.3);
   --shadow-float: 0 18px 40px -18px rgb(0 0 0 / 0.55);
 
   color-scheme: light;
@@ -33,10 +35,12 @@
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
     --bg: #0f0e24;
+    --band: #151335;
     --surface: #1a1838;
     --ink: #eeebf8;
     --muted: #a6a3c4;
     --line: #2d2a55;
+    --link: #b9b5ff;
     --hero: #14123d;
     --hero-muted: #b2afd6;
     --sun-soft: #3a2a08;
@@ -55,6 +59,8 @@
 
 @theme inline {
   --color-bg: var(--bg);
+  --color-band: var(--band);
+  --color-link: var(--link);
   --color-surface: var(--surface);
   --color-ink: var(--ink);
   --color-muted: var(--muted);
@@ -75,7 +81,7 @@
   --color-ok-soft: var(--ok-soft);
 
   --font-display: var(--font-bricolage), "Trebuchet MS", system-ui, sans-serif;
-  --font-sans: var(--font-figtree), system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-sans: var(--font-body), system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
 
   --shadow-card: var(--shadow-card);
   --shadow-float: var(--shadow-float);
@@ -96,15 +102,20 @@
     padding-bottom: env(safe-area-inset-bottom, 0px);
   }
 
-  :focus-visible {
-    outline: 3px solid var(--focus);
-    outline-offset: 2px;
-    border-radius: 6px;
+  /* Light panels sitting on the hero (cards, the ask answer) switch links and focus back to light values. */
+  [data-surface="hero"] {
+    --ring: var(--sun);
+    --link-color: var(--hero-ink);
+  }
+  [data-surface="light"] {
+    --ring: var(--focus);
+    --link-color: var(--link);
   }
 
-  /* On the dark-green hero the blue ring disappears, so focus uses the sun colour there. */
-  [data-surface="hero"] :focus-visible {
-    outline-color: var(--sun);
+  :focus-visible {
+    outline: 3px solid var(--ring, var(--focus));
+    outline-offset: 2px;
+    border-radius: 6px;
   }
 
   @media (prefers-reduced-motion: reduce) {
@@ -134,14 +145,25 @@
   letter-spacing: -0.03em;
 }
 
-/* Kanga-style border along the bottom of the hero: saffron/teal/hibiscus diamonds. */
+/* Underlined text link, the plain web convention that government service sites rely on. */
+@utility link {
+  color: var(--link-color, var(--link));
+  text-decoration-line: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  &:hover {
+    text-decoration-thickness: 2px;
+  }
+}
+
+/* Kanga-style border along the bottom edge: saffron/teal/hibiscus diamonds. */
 @utility kanga {
   position: relative;
   &::after {
     content: "";
     position: absolute;
     inset: auto 0 0 0;
-    height: 10px;
+    height: var(--kanga-height, 10px);
     background:
       linear-gradient(135deg, var(--sun) 25%, transparent 25%) 0 0 / 20px 10px,
       linear-gradient(225deg, var(--sun) 25%, transparent 25%) 0 0 / 20px 10px,
@@ -152,5 +174,14 @@
 @layer base {
   a {
     color: inherit;
+  }
+
+  /* Disclosures (trust banner, mobile menu) draw their own chevron. */
+  summary {
+    list-style: none;
+    cursor: pointer;
+  }
+  summary::-webkit-details-marker {
+    display: none;
   }
 }

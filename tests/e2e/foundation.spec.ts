@@ -15,7 +15,11 @@ test.describe("foundation", () => {
     await expect(page).toHaveURL(/\/en$/);
     await expect(page.locator("html")).toHaveAttribute("lang", "en");
     await expect(page.getByRole("heading", { level: 1 })).toHaveText("What do you need to do today?");
-    await expect(page.getByRole("link", { name: "English" })).toHaveAttribute("aria-current", "true");
+    // Small screens hide the current language and show only the other one, so look past visibility.
+    await expect(page.getByRole("link", { name: "English", includeHidden: true })).toHaveAttribute(
+      "aria-current",
+      "true",
+    );
 
     await page.getByRole("link", { name: "Kiswahili" }).click();
     await expect(page).toHaveURL(/\/sw$/);
@@ -94,11 +98,27 @@ test.describe("foundation", () => {
   test("keeps touch targets at least 44 px tall on mobile", async ({ page }) => {
     await page.setViewportSize({ width: 360, height: 740 });
     await page.goto("/sw");
-    const targets = page.locator("header a, header button, header input");
+    // Only what is visible at this width: the desktop navigation bar is hidden behind the menu button.
+    const targets = page
+      .locator("header :is(a, button, input, summary), [data-surface=hero] :is(a, button, input)")
+      .filter({ visible: true });
+    expect(await targets.count()).toBeGreaterThan(5);
     for (const target of await targets.all()) {
       const box = await target.boundingBox();
       expect(box?.height ?? 0, await target.evaluate((el) => el.outerHTML.slice(0, 80))).toBeGreaterThanOrEqual(44);
     }
+  });
+
+  test("opens the mobile menu and the trust banner without JavaScript", async ({ browser }) => {
+    const context = await browser.newContext({ javaScriptEnabled: false, viewport: { width: 360, height: 740 } });
+    const page = await context.newPage();
+    await page.goto("/sw");
+    await page.getByText("Jinsi tunavyokulinda").click();
+    await expect(page.getByText("Hatuombi taarifa zako binafsi")).toBeVisible();
+    await page.getByLabel("Menyu", { exact: true }).click();
+    await page.getByRole("navigation", { name: "Menyu kuu" }).getByRole("link", { name: "Huduma zote" }).click();
+    await expect(page).toHaveURL(/\/sw\/huduma$/);
+    await context.close();
   });
 
   test("shows a localised not-found page", async ({ page }) => {

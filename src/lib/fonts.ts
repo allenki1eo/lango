@@ -1,4 +1,4 @@
-import { Bricolage_Grotesque, Figtree } from "next/font/google";
+import { Bricolage_Grotesque, Public_Sans } from "next/font/google";
 
 export const bricolage = Bricolage_Grotesque({
   subsets: ["latin"],
@@ -6,4 +6,6 @@ export const bricolage = Bricolage_Grotesque({
   variable: "--font-bricolage",
   weight: ["700", "800"],
 });
-export const figtree = Figtree({ subsets: ["latin"], display: "swap", variable: "--font-figtree" });
+
+/** Public Sans: the plain, highly legible face of government service sites, used for body copy. */
+export const publicSans = Public_Sans({ subsets: ["latin"], display: "swap", variable: "--font-body" });
