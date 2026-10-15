@@ -61,7 +61,9 @@
     "aiNote": "Majibu ya msaidizi yanatoka kwenye taarifa zilizothibitishwa za Lango tu. Hakiki kwenye tovuti rasmi.",
     "related": "Huduma zinazohusiana",
     "offices": "Ofisi na mawasiliano",
-    "viewGuide": "Fungua mwongozo kamili"
+    "viewGuide": "Fungua mwongozo kamili",
+    "aiBadge": "Msaidizi wa AI",
+    "aiIntro": "AI inakusaidia kupata huduma sahihi. Hatua, ada na viungo vyote vinatoka kwenye vyanzo rasmi tulivyokagua."
   },
   "Home": {
     "categories": "Chagua huduma",

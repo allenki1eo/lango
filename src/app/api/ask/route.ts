@@ -4,6 +4,7 @@ import { ask } from "@/lib/ai/openrouter";
 import { rateLimit } from "@/lib/ai/rate-limit";
 import type { ToolEvent } from "@/lib/ai/tools";
 import { searchServices } from "@/lib/catalog";
+import { isAiEnabled } from "@/lib/ai/enabled";
 
 // Hobby allows up to 60 s with Fluid compute; we stop well before that (20 s AI budget).
 export const maxDuration = 30;
@@ -36,7 +37,7 @@ export async function POST(req: NextRequest) {
   const searchPayload = () => ({ text: "", cards: toCards(searchEvents(), l), source: "search" as const });
   if (body.fast === true) return NextResponse.json(searchPayload());
 
-  const aiOn = process.env.AI_ENABLED !== "false" && !!process.env.OPENROUTER_API_KEY;
+  const aiOn = isAiEnabled();
   const runAi = async () => {
     const t0 = Date.now();
     if (!aiOn) {

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
+import { AiNote } from "@/components/public/ai-note";
 import { AskBox } from "@/components/public/ask-box";
 import { LocaleLink } from "@/components/public/locale-link";
 import { PageHeader } from "@/components/public/page-header";
@@ -35,6 +36,7 @@ export default async function SearchPage({ params, searchParams }: PageProps<"/[
           action={getPathname({ href: "/tafuta", locale })}
           copy={await getAskCopy(locale)}
           defaultValue={query}
+          note={<AiNote />}
         />
       </PageHeader>
       <div className="wrap pt-8 pb-14">

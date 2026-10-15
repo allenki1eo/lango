@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState, type FormEvent } from "react";
+import { useRef, useState, type FormEvent, type ReactNode } from "react";
 import type { Cards } from "@/lib/ai/cards";
 import { Checklist } from "./checklist";
 import { Icon } from "./icon";
@@ -41,11 +41,14 @@ export function AskBox({
   action,
   copy,
   defaultValue = "",
+  note,
 }: {
   locale: string;
   action: string;
   copy: AskCopy;
   defaultValue?: string;
+  /** Server-rendered line under the box (the AI label), passed in so its copy stays off the client bundle. */
+  note?: ReactNode;
 }) {
   const [q, setQ] = useState(defaultValue);
   const [busy, setBusy] = useState(false);
@@ -144,6 +147,7 @@ export function AskBox({
           <span>{copy.submit}</span>
         </button>
       </form>
+      {note}
       <div className="mt-4 flex flex-wrap items-center gap-2">
         <span className="mr-0.5 text-[0.9375rem] text-muted in-data-[surface=hero]:text-hero-muted">
           {copy.tryLabel}

@@ -3,6 +3,7 @@ import Link from "next/link";
 import { loc, type Service } from "@/lib/catalog";
 import { getPathname } from "@/lib/i18n/navigation";
 import type { Locale } from "@/lib/i18n/routing";
+import { AiNote } from "./ai-note";
 import type { AskCopy } from "./ask-box";
 import { AskBox } from "./ask-box";
 import { Icon } from "./icon";
@@ -41,7 +42,7 @@ export function Hero({
             {copy.title}
           </h1>
           <p className="mb-7 max-w-[48ch] text-[1.0625rem] text-hero-muted">{copy.subtitle}</p>
-          <AskBox locale={locale} action={getPathname({ href: "/tafuta", locale })} copy={ask} />
+          <AskBox locale={locale} action={getPathname({ href: "/tafuta", locale })} copy={ask} note={<AiNote />} />
         </div>
         <section
           aria-labelledby="popular"

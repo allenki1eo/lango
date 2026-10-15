@@ -56,7 +56,9 @@
     "aiNote": "The assistant only answers from Lango's verified data. Check the official site.",
     "related": "Related services",
     "offices": "Offices and contacts",
-    "viewGuide": "Open the full guide"
+    "viewGuide": "Open the full guide",
+    "aiBadge": "AI assistant",
+    "aiIntro": "AI helps you find the right service. Every step, fee and link comes from official sources we have checked."
   },
   "Home": {
     "categories": "Choose a service",
