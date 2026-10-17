@@ -13,10 +13,15 @@ export function VisitorCount({ label, todayLabel, hint }: { label: string; today
     >
       <span aria-hidden="true" className="size-2 rounded-full bg-sun" />
       <span>
-        {label}: <strong data-n="visitors" className="font-display font-bold text-hero-ink tabular-nums" />
+        {label}:{" "}
+        <strong
+          data-n="visitors"
+          className="font-display font-bold text-hero-ink tabular-nums after:content-[attr(data-v)]"
+        />
       </span>
       <span data-today="" hidden>
-        · {todayLabel}: <strong data-n="today" className="font-semibold text-hero-ink tabular-nums" />
+        · {todayLabel}:{" "}
+        <strong data-n="today" className="font-semibold text-hero-ink tabular-nums after:content-[attr(data-v)]" />
       </span>
       <span className="sr-only">({hint})</span>
     </p>
