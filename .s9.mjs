@@ -1,0 +1,12 @@
+import { chromium } from "@playwright/test";
+import { readFileSync } from "node:fs";
+const pw = readFileSync(process.env.HOME + "/.hankisports/lango-stats.password", "utf8").trim();
+const b = await chromium.launch({ channel: "chrome" });
+const p = await b.newPage({ viewport: { width: 1280, height: 900 } });
+await p.goto("https://lango.hanki.co.tz/takwimu");
+await p.fill("input[name=password]", pw);
+await p.click("button");
+await p.waitForSelector("text=Wageni leo");
+console.log((await p.locator("main > div").first().innerText()).replace(/\s+/g, " ").slice(0, 140));
+console.log(await p.locator("main > p").last().innerText());
+await b.close();

@@ -1,3 +1,4 @@
+import { createHash } from "node:crypto";
 import type { Metadata } from "next";
 import { cookies } from "next/headers";
 import { readFullStats, type DayRow, type FullStats } from "@/db/queries/stats";
@@ -188,7 +189,9 @@ function storageKind(): { persistent: boolean; label: string } {
     try {
       host = new URL(url).hostname.split(".").slice(-2).join(".");
     } catch {}
-    return { persistent: true, label: `libSQL · ${host || "?"}` };
+    // A short one-way fingerprint tells whether the database changes between deploys without revealing it.
+    const id = createHash("sha256").update(url).digest("hex").slice(0, 6);
+    return { persistent: true, label: `libSQL · ${host || "?"} · #${id}` };
   }
   return { persistent: false, label: url.includes("memory") ? "memory" : "local file" };
 }
