@@ -46,3 +46,14 @@ CI runs all of these, plus a check that migrations match the schema and that the
 | M0 Foundation | Done, except connecting the Turso, Resend and Vercel accounts |
 | M1 Public catalog | Next |
 | M2 Admin, M3 AI search, M4 Journeys, M5 Launch readiness | Planned |
+
+## Visitor stats
+
+Lango counts visits without cookies or personal data (see `src/lib/stats/core.ts`):
+
+- Page views and official-site taps are sent by a tiny inline script to `POST /api/hit`; bots, prefetches and automated browsers are skipped.
+- Daily unique visitors use a hash of IP + user agent salted with a per-day secret (`STATS_SECRET`); raw IPs are never stored and old hashes are deleted daily.
+- All-time unique visitors are estimated with a HyperLogLog sketch (±3%).
+- AI questions are counted in `/api/ask`.
+- The footer shows public totals from `GET /api/wageni` (edge-cached for 60 s).
+- Detailed charts live at `/takwimu`, protected by `LANGO_STATS_PASSWORD`. Data is stored in the Turso database (`TURSO_DATABASE_URL`, `TURSO_AUTH_TOKEN`).
