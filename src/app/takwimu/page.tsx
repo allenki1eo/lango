@@ -210,6 +210,7 @@ function Dashboard({ s }: { s: FullStats }) {
           <p className="text-sm text-muted">
             Siku 30 zilizopita, saa za Afrika Mashariki · Last 30 days, East Africa Time
             {s.totals.firstDay ? ` · tangu / since ${s.totals.firstDay}` : ""}
+            {` · imesasishwa / updated ${new Date(Date.now() + 3 * 3600_000).toISOString().slice(11, 16)} EAT`}
           </p>
         </div>
         <form method="post" action="/takwimu/logout">
