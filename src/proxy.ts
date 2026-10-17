@@ -18,5 +18,5 @@ export default function proxy(request: NextRequest) {
 
 export const config = {
   // Everything except API routes, the admin panel, Next.js internals and files with an extension.
-  matcher: ["/((?!api|admin|_next|_vercel|.*\\..*).*)"],
+  matcher: ["/((?!api|admin|takwimu|_next|_vercel|.*\\..*).*)"],
 };

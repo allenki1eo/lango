@@ -90,6 +90,7 @@ export default async function ServicePage({ params }: PageProps<"/[locale]/hudum
         <div className="mt-5 flex flex-wrap items-center gap-x-4 gap-y-2">
           <a
             href={s.officialUrl}
+            data-tap={s.slug}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex min-h-12 items-center gap-2 rounded-lg bg-hero px-5 font-display font-bold text-hero-ink no-underline transition hover:brightness-125"

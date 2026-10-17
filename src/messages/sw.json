@@ -50,7 +50,10 @@
     "tagline": "Huduma za serikali ya Tanzania, rahisi kupata.",
     "topics": "Makundi ya huduma",
     "popular": "Zinazotafutwa zaidi",
-    "emergency": "Namba za dharura"
+    "emergency": "Namba za dharura",
+    "visitors": "Wageni",
+    "visitorsToday": "Leo",
+    "visitorsHint": "Visitors: watu waliotembelea Lango (makadirio, bila kuhifadhi taarifa binafsi)"
   },
   "Ask": {
     "thinking": "Lango inatafuta…",

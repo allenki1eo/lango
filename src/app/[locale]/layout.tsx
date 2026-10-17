@@ -6,6 +6,7 @@ import { getPathname } from "@/lib/i18n/navigation";
 import { routing } from "@/lib/i18n/routing";
 import { readServerEnv } from "@/lib/env";
 import { TrustBanner } from "@/components/public/trust-banner";
+import { VisitBeacon } from "@/components/public/visit-beacon";
 import { bricolage, publicSans } from "@/lib/fonts";
 
 export function generateStaticParams() {
@@ -58,6 +59,7 @@ export default async function LocaleLayout({ children, params }: LayoutProps<"/[
         <TrustBanner />
         {/* No NextIntlClientProvider: public client components receive their copy as props, keeping JS small. */}
         {children}
+        <VisitBeacon />
       </body>
     </html>
   );

@@ -1,4 +1,6 @@
-import { NextResponse, type NextRequest } from "next/server";
+import { NextResponse, after, type NextRequest } from "next/server";
+import { recordEvent } from "@/db/queries/stats";
+import { isBot } from "@/lib/stats/core";
 import { toCards } from "@/lib/ai/cards";
 import { ask } from "@/lib/ai/openrouter";
 import { rateLimit } from "@/lib/ai/rate-limit";
@@ -36,6 +38,12 @@ export async function POST(req: NextRequest) {
   };
   const searchPayload = () => ({ text: "", cards: toCards(searchEvents(), l), source: "search" as const });
   if (body.fast === true) return NextResponse.json(searchPayload());
+  if (!isBot(req.headers.get("user-agent"))) {
+    // One count per question asked; failures here never affect the answer.
+    after(() =>
+      recordEvent("ai").catch((e) => console.error("[ask] stat not counted:", e instanceof Error ? e.message : e)),
+    );
+  }
 
   const aiOn = isAiEnabled();
   const runAi = async () => {

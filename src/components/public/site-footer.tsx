@@ -7,6 +7,7 @@ import type { Locale } from "@/lib/i18n/routing";
 import { BrandMark } from "./brand-mark";
 import { HankiBadge } from "./hanki-badge";
 import { Icon } from "./icon";
+import { VisitorCount } from "./visitor-count";
 
 /** Return-to-top band, link columns on the brand colour, then the identifier with the disclaimer. */
 export function SiteFooter() {
@@ -65,7 +66,10 @@ export function SiteFooter() {
         <div className="wrap space-y-2 py-7 text-[0.9375rem]">
           <p className="max-w-[75ch]">{t("disclaimer")}</p>
           <p className="max-w-[75ch]">{t("privacy")}</p>
-          <HankiBadge label={t("by")} />
+          <div className="flex flex-wrap items-center justify-between gap-3">
+            <HankiBadge label={t("by")} />
+            <VisitorCount label={t("visitors")} todayLabel={t("visitorsToday")} hint={t("visitorsHint")} />
+          </div>
         </div>
       </div>
     </footer>

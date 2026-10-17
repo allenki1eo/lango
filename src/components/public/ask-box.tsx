@@ -204,6 +204,7 @@ export function AskBox({
                 </div>
                 <a
                   href={g.officialUrl}
+                  data-tap={g.slug}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex min-h-12 items-center justify-center gap-2 rounded-lg bg-hero px-4 font-semibold text-hero-ink no-underline hover:brightness-125"

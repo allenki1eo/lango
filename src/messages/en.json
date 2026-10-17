@@ -45,7 +45,10 @@
     "tagline": "Tanzanian government services, easier to find.",
     "topics": "Service topics",
     "popular": "Most searched",
-    "emergency": "Emergency numbers"
+    "emergency": "Emergency numbers",
+    "visitors": "Visitors",
+    "visitorsToday": "Today",
+    "visitorsHint": "People who have visited Lango (estimate, no personal data stored)"
   },
   "Ask": {
     "thinking": "Lango is looking…",
