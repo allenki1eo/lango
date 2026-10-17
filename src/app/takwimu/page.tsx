@@ -183,7 +183,13 @@ function Ranking({ rows, sw, en }: { rows: { label: string; sub?: string; value:
 /** Which kind of database the counters live in (scheme only, never the URL itself). */
 function storageKind(): { persistent: boolean; label: string } {
   const url = process.env.TURSO_DATABASE_URL ?? "";
-  if (/^(libsql|https|wss|http|ws):/i.test(url)) return { persistent: true, label: "Turso (libSQL)" };
+  if (/^(libsql|https|wss|http|ws):/i.test(url)) {
+    let host = "";
+    try {
+      host = new URL(url).hostname.split(".").slice(-2).join(".");
+    } catch {}
+    return { persistent: true, label: `libSQL · ${host || "?"}` };
+  }
   return { persistent: false, label: url.includes("memory") ? "memory" : "local file" };
 }
 
@@ -290,8 +296,10 @@ function Dashboard({ s }: { s: FullStats }) {
       </div>
 
       <p className="text-xs text-muted">
-        Hakuna vidakuzi wala anwani za IP zinazohifadhiwa; roboti na prefetch hazihesabiwi. · No cookies or IP addresses
-        are stored for visitors; bots and prefetches are not counted.
+        Hifadhi · Storage: {storage.label}
+        {s.dbCreated ? ` · tangu / created ${s.dbCreated} UTC` : ""}. Hakuna vidakuzi wala anwani za IP zinazohifadhiwa;
+        roboti na prefetch hazihesabiwi. · No cookies or IP addresses are stored for visitors; bots and prefetches are
+        not counted.
       </p>
     </Shell>
   );

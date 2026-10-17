@@ -24,6 +24,8 @@ async function ready(): Promise<Client> {
         "CREATE TABLE IF NOT EXISTS stats_daily (day TEXT NOT NULL, metric TEXT NOT NULL, key TEXT NOT NULL DEFAULT '', count INTEGER NOT NULL DEFAULT 0, PRIMARY KEY (day, metric, key))",
         "CREATE TABLE IF NOT EXISTS stats_uniques (day TEXT NOT NULL, hash TEXT NOT NULL, PRIMARY KEY (day, hash))",
         "CREATE TABLE IF NOT EXISTS stats_hll (idx INTEGER PRIMARY KEY, rho INTEGER NOT NULL)",
+        "CREATE TABLE IF NOT EXISTS stats_meta (k TEXT PRIMARY KEY, v TEXT NOT NULL)",
+        "INSERT OR IGNORE INTO stats_meta (k, v) VALUES ('created', datetime('now'))",
       ],
       "write",
     )
@@ -104,6 +106,8 @@ export type Ranked = { key: string; count: number };
 export type FullStats = {
   days: DayRow[];
   totals: { pv: number; ai: number; tap: number; uniques: number; firstDay: string | null };
+  /** When the stats tables were created (UTC). If this changes on every deploy, the database is not persistent. */
+  dbCreated: string | null;
   topPages: Ranked[];
   topServices: { key: string; views: number; taps: number }[];
 };
@@ -112,7 +116,7 @@ export async function readFullStats(range = 30): Promise<FullStats> {
   const c = await ready();
   const days = lastDays(range);
   const from = days[0]!;
-  const [daily, totals, pages, svc, uniques] = await Promise.all([
+  const [daily, totals, pages, svc, uniques, meta] = await Promise.all([
     c.execute({
       sql: "SELECT day, metric, count FROM stats_daily WHERE day >= ? AND metric IN ('pv','uv','ai','tap') AND key = '' UNION ALL SELECT day, metric, SUM(count) FROM stats_daily WHERE day >= ? AND metric = 'tap' AND key <> '' GROUP BY day",
       args: [from, from],
@@ -129,6 +133,7 @@ export async function readFullStats(range = 30): Promise<FullStats> {
       args: [from],
     }),
     allTimeUniques(c),
+    c.execute("SELECT v FROM stats_meta WHERE k = 'created'"),
   ]);
 
   const byDay = new Map(days.map((d) => [d, { day: d, pv: 0, uv: 0, ai: 0, tap: 0 }]));
@@ -155,6 +160,7 @@ export async function readFullStats(range = 30): Promise<FullStats> {
     days: [...byDay.values()],
     totals: { pv: tot.pv ?? 0, ai: tot.ai ?? 0, tap: tot.tap ?? 0, uniques, firstDay: firsts[0] ?? null },
     topPages: pages.rows.map((r) => ({ key: String(r.key), count: Number(r.n) })),
+    dbCreated: meta.rows[0] ? String(meta.rows[0].v) : null,
     topServices: [...services.values()].sort((a, b) => b.views + b.taps - (a.views + a.taps)).slice(0, 16),
   };
 }
