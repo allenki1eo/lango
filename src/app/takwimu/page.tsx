@@ -180,7 +180,15 @@ function Ranking({ rows, sw, en }: { rows: { label: string; sub?: string; value:
   );
 }
 
+/** Which kind of database the counters live in (scheme only, never the URL itself). */
+function storageKind(): { persistent: boolean; label: string } {
+  const url = process.env.TURSO_DATABASE_URL ?? "";
+  if (/^(libsql|https|wss|http|ws):/i.test(url)) return { persistent: true, label: "Turso (libSQL)" };
+  return { persistent: false, label: url.includes("memory") ? "memory" : "local file" };
+}
+
 function Dashboard({ s }: { s: FullStats }) {
+  const storage = storageKind();
   const today = s.days.at(-1)!;
   const sum = (k: keyof Omit<DayRow, "day">) => s.days.reduce((n, d) => n + d[k], 0);
   return (
@@ -199,6 +207,14 @@ function Dashboard({ s }: { s: FullStats }) {
           <button className="min-h-10 rounded-xl border border-line px-4 text-sm font-semibold">Toka · Log out</button>
         </form>
       </header>
+
+      {storage.persistent ? null : (
+        <p role="alert" className="rounded-2xl border-2 border-sun bg-sun-soft p-4 text-sm font-semibold">
+          Takwimu hazihifadhiwi kwa kudumu: hifadhidata ni ya muda ({storage.label}) na hufutika kila toleo jipya.
+          Unganisha Turso. · Stats are not persistent: the database is temporary ({storage.label}) and resets on every
+          deploy. Connect a Turso database (TURSO_DATABASE_URL, TURSO_AUTH_TOKEN).
+        </p>
+      )}
 
       <div className="grid grid-cols-2 gap-3 md:grid-cols-4">
         <Stat
