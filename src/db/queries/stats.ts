@@ -108,6 +108,8 @@ export type FullStats = {
   totals: { pv: number; ai: number; tap: number; uniques: number; firstDay: string | null };
   /** When the stats tables were created (UTC). If this changes on every deploy, the database is not persistent. */
   dbCreated: string | null;
+  /** Time these numbers were read, "HH:MM" in EAT. */
+  generatedAt: string;
   topPages: Ranked[];
   topServices: { key: string; views: number; taps: number }[];
 };
@@ -161,6 +163,7 @@ export async function readFullStats(range = 30): Promise<FullStats> {
     totals: { pv: tot.pv ?? 0, ai: tot.ai ?? 0, tap: tot.tap ?? 0, uniques, firstDay: firsts[0] ?? null },
     topPages: pages.rows.map((r) => ({ key: String(r.key), count: Number(r.n) })),
     dbCreated: meta.rows[0] ? String(meta.rows[0].v) : null,
+    generatedAt: new Date(Date.now() + 3 * 3600_000).toISOString().slice(11, 16),
     topServices: [...services.values()].sort((a, b) => b.views + b.taps - (a.views + a.taps)).slice(0, 16),
   };
 }
