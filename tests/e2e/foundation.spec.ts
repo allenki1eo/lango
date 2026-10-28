@@ -5,7 +5,7 @@ test.describe("foundation", () => {
     await page.goto("/");
     await expect(page).toHaveURL(/\/sw$/);
     await expect(page.locator("html")).toHaveAttribute("lang", "sw");
-    await expect(page.getByRole("heading", { level: 1 })).toHaveText("Unataka kufanya nini leo?");
+    await expect(page.getByRole("heading", { level: 1 })).toHaveText("Habari, Tanzania");
     await expect(page.getByRole("searchbox", { name: "Uliza swali au andika huduma" })).toBeVisible();
   });
 
@@ -14,7 +14,7 @@ test.describe("foundation", () => {
     await page.getByRole("link", { name: "English" }).click();
     await expect(page).toHaveURL(/\/en$/);
     await expect(page.locator("html")).toHaveAttribute("lang", "en");
-    await expect(page.getByRole("heading", { level: 1 })).toHaveText("What do you need to do today?");
+    await expect(page.getByRole("heading", { level: 1 })).toHaveText("Hello, Tanzania");
     // Small screens hide the current language and show only the other one, so look past visibility.
     await expect(page.getByRole("link", { name: "English", includeHidden: true })).toHaveAttribute(
       "aria-current",
@@ -113,9 +113,9 @@ test.describe("foundation", () => {
     const context = await browser.newContext({ javaScriptEnabled: false, viewport: { width: 360, height: 740 } });
     const page = await context.newPage();
     await page.goto("/sw");
-    await page.getByText("Jinsi tunavyokulinda").click();
+    await page.locator("details").first().locator("summary").click();
     await expect(page.getByText("Hatuombi taarifa zako binafsi")).toBeVisible();
-    await page.getByLabel("Menyu", { exact: true }).click();
+    await page.locator("header summary").click();
     await page.getByRole("navigation", { name: "Menyu kuu" }).getByRole("link", { name: "Huduma zote" }).click();
     await expect(page).toHaveURL(/\/sw\/huduma$/);
     await context.close();

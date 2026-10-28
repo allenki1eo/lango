@@ -3,18 +3,23 @@
 /*
  * Lango design tokens. Light values are the default; dark values apply when the system prefers
  * dark (unless the page forces light) or when the page forces dark with data-theme="dark".
+ *
+ * The look follows America.gov's calm front door: white pages, near-black indigo ink, soft grey
+ * "stage" cards with very round corners, a serif display face and a tight grotesque for everything else.
  */
 :root {
   --bg: #ffffff;
-  --band: #f5f2ea;
+  --band: #f2f2f0;
   --surface: #ffffff;
-  --ink: #1a1838;
-  --muted: #55526e;
-  --line: #dfdacb;
-  --link: #2f2a9e;
-  --hero: #1f1c5c;
-  --hero-ink: #f5f2ea;
-  --hero-muted: #c9c6e6;
+  --ink: #0d0c24;
+  --muted: #5c5b70;
+  --line: #e4e4ea;
+  --link: #0d0c24;
+  --primary: #1f1c5c;
+  --primary-ink: #ffffff;
+  --hero: #12103a;
+  --hero-ink: #f4f3fb;
+  --hero-muted: #bebcdc;
   --sun: #f4a31b;
   --sun-ink: #241500;
   --sun-soft: #fdecc8;
@@ -22,12 +27,12 @@
   --teal-light: #3fc1b8;
   --teal-soft: #d5efec;
   --hibiscus: #a8204f;
-  --hibiscus-soft: #fbe1ea;
+  --hibiscus-soft: #fbe6ed;
   --focus: #1b6ef3;
   --ok: #0f7a52;
   --ok-soft: #e1f3ea;
-  --shadow-card: 0 1px 2px rgb(31 28 92 / 0.06), 0 10px 24px -18px rgb(31 28 92 / 0.3);
-  --shadow-float: 0 18px 40px -18px rgb(0 0 0 / 0.55);
+  --shadow-card: 0 1px 2px rgb(13 12 36 / 0.04), 0 14px 34px -14px rgb(13 12 36 / 0.16);
+  --shadow-float: 0 1px 2px rgb(13 12 36 / 0.05), 0 30px 60px -28px rgb(13 12 36 / 0.38);
 
   color-scheme: light;
 }
@@ -35,23 +40,26 @@
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
     --bg: #0f0e24;
-    --band: #151335;
-    --surface: #1a1838;
-    --ink: #eeebf8;
-    --muted: #a6a3c4;
-    --line: #2d2a55;
-    --link: #b9b5ff;
-    --hero: #14123d;
+    --band: #17163a;
+    --surface: #1c1b42;
+    --ink: #efeef8;
+    --muted: #a9a8c6;
+    --line: #2c2b56;
+    --link: #efeef8;
+    --primary: #d9d6ff;
+    --primary-ink: #0f0e24;
+    --hero: #0a0920;
     --hero-muted: #b2afd6;
     --sun-soft: #3a2a08;
     --teal: #3fc1b8;
     --teal-soft: #12302f;
-    --hibiscus: #a8204f;
-    --hibiscus-soft: #3a1426;
+    --hibiscus: #f0708f;
+    --hibiscus-soft: #35142a;
     --focus: #8ab4ff;
     --ok: #4fd29b;
     --ok-soft: #10301f;
     --shadow-card: 0 1px 2px rgb(0 0 0 / 0.4), 0 14px 30px -16px rgb(0 0 0 / 0.7);
+    --shadow-float: 0 1px 2px rgb(0 0 0 / 0.4), 0 30px 60px -28px rgb(0 0 0 / 0.85);
 
     color-scheme: dark;
   }
@@ -65,6 +73,8 @@
   --color-ink: var(--ink);
   --color-muted: var(--muted);
   --color-line: var(--line);
+  --color-primary: var(--primary);
+  --color-primary-ink: var(--primary-ink);
   --color-hero: var(--hero);
   --color-hero-ink: var(--hero-ink);
   --color-hero-muted: var(--hero-muted);
@@ -80,8 +90,9 @@
   --color-ok: var(--ok);
   --color-ok-soft: var(--ok-soft);
 
-  --font-display: var(--font-bricolage), "Trebuchet MS", system-ui, sans-serif;
-  --font-sans: var(--font-body), system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-serif: var(--font-source-serif), Georgia, "Times New Roman", serif;
+  --font-display: var(--font-inter-tight), system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-sans: var(--font-inter-tight), system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
 
   --shadow-card: var(--shadow-card);
   --shadow-float: var(--shadow-float);
@@ -98,11 +109,14 @@
     background: var(--bg);
     color: var(--ink);
     font-family: var(--font-sans);
+    font-size: 1.0625rem;
     line-height: 1.55;
+    letter-spacing: -0.006em;
     padding-bottom: env(safe-area-inset-bottom, 0px);
+    -webkit-font-smoothing: antialiased;
   }
 
-  /* Light panels sitting on the hero (cards, the ask answer) switch links and focus back to light values. */
+  /* Light panels sitting on the dark media (cards, the ask answer) switch links and focus back to light values. */
   [data-surface="hero"] {
     --ring: var(--sun);
     --link-color: var(--hero-ink);
@@ -115,7 +129,7 @@
   :focus-visible {
     outline: 3px solid var(--ring, var(--focus));
     outline-offset: 2px;
-    border-radius: 6px;
+    border-radius: 8px;
   }
 
   @media (prefers-reduced-motion: reduce) {
@@ -128,35 +142,73 @@
       scroll-behavior: auto !important;
     }
   }
+
+  a {
+    color: inherit;
+  }
+
+  /* Disclosures (trust line, menu) draw their own chevron. */
+  summary {
+    list-style: none;
+    cursor: pointer;
+  }
+  summary::-webkit-details-marker {
+    display: none;
+  }
 }
 
 @utility wrap {
   width: 100%;
-  max-width: 1080px;
+  max-width: 1120px;
   margin-inline: auto;
-  padding-inline: 16px;
+  padding-inline: 20px;
 
   @media (width >= 40rem) {
-    padding-inline: 20px;
+    padding-inline: 32px;
   }
 }
 
 @utility tracking-display {
-  letter-spacing: -0.03em;
+  letter-spacing: -0.035em;
 }
 
-/* Underlined text link, the plain web convention that government service sites rely on. */
-@utility link {
-  color: var(--link-color, var(--link));
-  text-decoration-line: underline;
-  text-decoration-thickness: 1px;
-  text-underline-offset: 3px;
-  &:hover {
-    text-decoration-thickness: 2px;
+/* Large serif display type: the "Hello, America" voice. Optical size follows the font size. */
+@utility serif-display {
+  font-family: var(--font-serif);
+  font-weight: 450;
+  font-optical-sizing: auto;
+  letter-spacing: -0.035em;
+  line-height: 0.98;
+}
+
+/* The soft grey stage that frames the top of every page, with a faint light pool in the middle. */
+@utility stage {
+  margin-inline: 8px;
+  border-radius: 32px;
+  background:
+    radial-gradient(60% 55% at 50% 38%, color-mix(in oklab, var(--surface) 70%, transparent), transparent 70%),
+    var(--band);
+
+  @media (width >= 40rem) {
+    margin-inline: 24px;
+    border-radius: 44px;
   }
 }
 
-/* Kanga-style border along the bottom edge: saffron/teal/hibiscus diamonds. */
+/* Quiet text link: ink coloured, with a faint underline that firms up on hover. */
+@utility link {
+  color: var(--link-color, var(--link));
+  text-decoration-line: underline;
+  text-decoration-color: color-mix(in oklab, currentColor 35%, transparent);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
+  transition: text-decoration-color 150ms;
+  &:hover {
+    text-decoration-color: currentColor;
+  }
+}
+
+/* Kanga-style border: saffron/teal/hibiscus diamonds, kept as a thin signature in the footer. */
 @utility kanga {
   position: relative;
   &::after {
@@ -171,17 +223,62 @@
   }
 }
 
-@layer base {
-  a {
-    color: inherit;
+/*
+ * Hero preview carousel, CSS only (no JavaScript): each slide fades in for a quarter of the cycle.
+ * A visually hidden checkbox pauses it, and it holds still on the first slide for reduced motion.
+ * When the ask box shows a status or an answer, the previews step aside.
+ */
+@keyframes slide-cycle {
+  0% {
+    opacity: 0;
+    transform: translateY(14px) scale(0.98);
+  }
+  4%,
+  22% {
+    opacity: 1;
+    transform: none;
+  }
+  27%,
+  100% {
+    opacity: 0;
+    transform: translateY(-10px) scale(0.99);
+  }
+}
+
+@layer components {
+  .preview-slide {
+    animation: slide-cycle 24s infinite both;
+    animation-delay: calc(var(--i) * 6s);
+  }
+  .preview-stage:has(.preview-pause:checked) .preview-slide {
+    animation-play-state: paused;
+  }
+  .preview-stage:has([aria-live="polite"] > *) .preview-slides {
+    display: none;
   }
 
-  /* Disclosures (trust banner, mobile menu) draw their own chevron. */
-  summary {
-    list-style: none;
-    cursor: pointer;
+  @keyframes drift {
+    to {
+      transform: translate3d(-50%, 0, 0);
+    }
   }
-  summary::-webkit-details-marker {
-    display: none;
+  .drift {
+    animation: drift 60s linear infinite;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .preview-slide,
+    .drift {
+      animation: none !important;
+    }
+    .preview-slide {
+      opacity: 0;
+    }
+    .preview-slide:first-child {
+      opacity: 1;
+    }
+    .preview-pause-control {
+      display: none;
+    }
   }
 }

@@ -7,7 +7,7 @@ import { routing } from "@/lib/i18n/routing";
 import { readServerEnv } from "@/lib/env";
 import { TrustBanner } from "@/components/public/trust-banner";
 import { VisitBeacon } from "@/components/public/visit-beacon";
-import { bricolage, publicSans } from "@/lib/fonts";
+import { interTight, sourceSerif } from "@/lib/fonts";
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
@@ -18,8 +18,8 @@ export const viewport: Viewport = {
   initialScale: 1,
   viewportFit: "cover",
   themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#1F1C5C" },
-    { media: "(prefers-color-scheme: dark)", color: "#14123D" },
+    { media: "(prefers-color-scheme: light)", color: "#FFFFFF" },
+    { media: "(prefers-color-scheme: dark)", color: "#0F0E24" },
   ],
 };
 
@@ -48,7 +48,7 @@ export default async function LocaleLayout({ children, params }: LayoutProps<"/[
   const t = await getTranslations({ locale, namespace: "Common" });
 
   return (
-    <html lang={locale} className={`${bricolage.variable} ${publicSans.variable}`}>
+    <html lang={locale} className={`${sourceSerif.variable} ${interTight.variable}`}>
       <body id="top">
         <a
           href="#main"

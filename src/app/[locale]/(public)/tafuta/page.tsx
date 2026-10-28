@@ -27,22 +27,23 @@ export default async function SearchPage({ params, searchParams }: PageProps<"/[
   const hits = query ? searchServices(query, 8) : [];
   return (
     <main id="main" tabIndex={-1} className="outline-none">
-      <PageHeader crumbs={[{ href: getPathname({ href: "/", locale }), label: n("home") }]}>
-        <h1 className="mt-2 mb-5 font-display text-[clamp(1.75rem,5vw,2.5rem)] font-extrabold tracking-display">
-          {t("title")}
-        </h1>
-        <AskBox
-          locale={locale}
-          action={getPathname({ href: "/tafuta", locale })}
-          copy={await getAskCopy(locale)}
-          defaultValue={query}
-          note={<AiNote />}
-        />
+      <PageHeader current="search" crumbs={[{ href: getPathname({ href: "/", locale }), label: n("home") }]}>
+        <div className="mx-auto max-w-[760px] text-center">
+          {/* Before a search the page is the ask box itself, so it is titled for that. */}
+          <h1 className="serif-display mt-4 mb-8 text-[clamp(2.75rem,8vw,5rem)]">{query ? t("title") : n("search")}</h1>
+          <AskBox
+            locale={locale}
+            action={getPathname({ href: "/tafuta", locale })}
+            copy={await getAskCopy(locale)}
+            defaultValue={query}
+            note={<AiNote />}
+          />
+        </div>
       </PageHeader>
-      <div className="wrap pt-8 pb-14">
+      <div className="wrap pt-12 pb-6">
         {query ? <p className="mb-4 text-muted">{t("youSearched", { query })}</p> : null}
         {hits.length ? (
-          <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {hits.map((s) => (
               <ServiceTile key={s.slug} s={s} locale={locale} />
             ))}

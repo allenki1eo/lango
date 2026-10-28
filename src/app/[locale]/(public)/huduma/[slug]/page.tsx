@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Checklist } from "@/components/public/checklist";
+import { Glyph } from "@/components/public/glyph";
 import { Icon } from "@/components/public/icon";
 import { AgencyStamp } from "@/components/public/agency-stamp";
 import { PageHeader } from "@/components/public/page-header";
@@ -69,53 +70,53 @@ export default async function ServicePage({ params }: PageProps<"/[locale]/hudum
   return (
     <main id="main" tabIndex={-1} className="outline-none">
       <PageHeader
+        current="services"
         crumbs={[
           { href: getPathname({ href: "/", locale }), label: n("home") },
           { href: servicesPath, label: n("services") },
           ...(category ? [{ href: `${servicesPath}#${category.slug}`, label: loc(category.name, locale) }] : []),
         ]}
       >
-        <div className="mt-2 flex items-start gap-4">
+        <div className="mt-4 flex items-center gap-3">
           <AgencyStamp agency={s.agency} icon={s.icon} size="lg" />
-          <div className="min-w-0">
-            <p className="text-sm font-medium text-muted">
-              {t("agency")}: {s.agency}
-            </p>
-            <h1 className="font-display text-[clamp(1.8rem,5vw,2.8rem)] leading-[1.05] font-extrabold tracking-display text-balance">
-              {loc(s.title, locale)}
-            </h1>
-          </div>
+          <p className="text-[0.9375rem] text-muted">
+            {t("agency")}
+            <strong className="block text-lg font-semibold tracking-tight text-ink">{s.agency}</strong>
+          </p>
         </div>
-        <p className="mt-3 max-w-[62ch] text-[1.0625rem] text-muted">{loc(s.summary, locale)}</p>
-        <div className="mt-5 flex flex-wrap items-center gap-x-4 gap-y-2">
+        <h1 className="serif-display mt-6 max-w-[16ch] text-[clamp(2.6rem,7.5vw,5rem)] text-balance">
+          {loc(s.title, locale)}
+        </h1>
+        <p className="mt-5 max-w-[56ch] text-[clamp(1.0625rem,2vw,1.25rem)] text-muted">{loc(s.summary, locale)}</p>
+        <div className="mt-8 flex flex-wrap items-center gap-x-5 gap-y-3">
           <a
             href={s.officialUrl}
             data-tap={s.slug}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex min-h-12 items-center gap-2 rounded-lg bg-hero px-5 font-display font-bold text-hero-ink no-underline transition hover:brightness-125"
+            className="inline-flex min-h-13 items-center gap-2 rounded-full bg-primary px-6 text-[1.0625rem] font-semibold text-primary-ink no-underline transition hover:opacity-90"
           >
             {t("official")} <Icon name="external" />
           </a>
           <p className="flex items-center gap-1.5 text-sm text-muted">
-            <Icon name="lock" className="text-ok" />
+            <Glyph name="lock" className="text-ok" />
             {t("leaving", { host })}
           </p>
         </div>
       </PageHeader>
-      <div className="wrap grid gap-8 pt-9 pb-14 lg:grid-cols-[minmax(0,1fr)_280px] lg:gap-12">
+      <div className="wrap grid gap-10 pt-12 pb-20 sm:pt-16 lg:grid-cols-[minmax(0,1fr)_260px] lg:gap-16">
         <aside className="lg:order-2">
-          <nav
-            aria-labelledby="on-this-page"
-            className="rounded-lg border border-line bg-surface p-4 lg:sticky lg:top-4"
-          >
-            <h2 id="on-this-page" className="mb-1 font-display font-bold">
+          <nav aria-labelledby="on-this-page" className="rounded-[28px] bg-band p-5 lg:sticky lg:top-6">
+            <h2 id="on-this-page" className="mb-1 text-sm font-medium text-muted">
               {t("onThisPage")}
             </h2>
             <ul>
               {sections.map((x) => (
                 <li key={x.id}>
-                  <a href={`#${x.id}`} className="link flex min-h-10 items-center">
+                  <a
+                    href={`#${x.id}`}
+                    className="flex min-h-11 items-center font-medium no-underline hover:underline hover:underline-offset-4"
+                  >
                     {x.label}
                   </a>
                 </li>
@@ -123,12 +124,12 @@ export default async function ServicePage({ params }: PageProps<"/[locale]/hudum
             </ul>
           </nav>
         </aside>
-        <div className="min-w-0 space-y-10">
+        <div className="min-w-0 space-y-14">
           {s.documents.length ? (
             <GuideSection id="nyaraka" title={t("documents")}>
-              <ul className="divide-y divide-line rounded-lg border border-line bg-surface">
+              <ul className="divide-y divide-line rounded-[28px] border border-line bg-surface px-2 shadow-card">
                 {s.documents.map((d) => (
-                  <li key={d.sw} className="flex gap-3 p-3.5">
+                  <li key={d.sw} className="flex gap-3 p-4">
                     <Icon name="check" className="mt-1 text-ok" />
                     {loc(d, locale)}
                   </li>
@@ -137,22 +138,22 @@ export default async function ServicePage({ params }: PageProps<"/[locale]/hudum
             </GuideSection>
           ) : null}
           <GuideSection id="hatua" title={t("steps")}>
-            <p className="-mt-1 mb-3 text-sm text-muted">{t("stepsHint")}</p>
+            <p className="-mt-2 mb-4 text-[0.9375rem] text-muted">{t("stepsHint")}</p>
             <Checklist id={s.slug} items={steps} doneLabel={t.raw("done") as string} resetLabel={t("reset")} />
           </GuideSection>
           <GuideSection id="ada" title={t("fees")}>
-            <div className="rounded-lg border-l-8 border-teal bg-teal-soft p-4 sm:p-5">
+            <div className="rounded-[28px] bg-band p-5 sm:p-7">
               {s.fees.length ? (
                 <dl className="divide-y divide-line">
                   {s.fees.map((f) => (
-                    <div key={f.label.sw} className="py-2.5 first:pt-0 last:pb-0">
+                    <div key={f.label.sw} className="py-3.5 first:pt-0 last:pb-0">
                       <div className="flex flex-wrap justify-between gap-x-4">
                         <dt>{loc(f.label, locale)}</dt>
-                        <dd className="font-display text-lg font-extrabold whitespace-nowrap">
+                        <dd className="text-xl font-semibold tracking-tight whitespace-nowrap tabular-nums">
                           {loc(f.amount, locale)}
                         </dd>
                       </div>
-                      <a href={f.source} target="_blank" rel="noopener noreferrer" className="link text-xs">
+                      <a href={f.source} target="_blank" rel="noopener noreferrer" className="link text-sm text-muted">
                         {t("feeSource")}: {new URL(f.source).hostname}
                       </a>
                     </div>
@@ -171,9 +172,9 @@ export default async function ServicePage({ params }: PageProps<"/[locale]/hudum
                   <li key={c.value}>
                     <a
                       href={c.href}
-                      className="flex min-h-12 items-center gap-3 rounded-lg border border-line bg-surface p-3 no-underline hover:border-hero"
+                      className="flex min-h-14 items-center gap-3 rounded-3xl border border-line bg-surface p-4 no-underline shadow-card transition-shadow hover:shadow-float"
                     >
-                      <Icon name="phone" className="text-teal" />
+                      <Glyph name="phone" />
                       <span>
                         <span className="block text-sm text-muted">{loc(c.label, locale)}</span>
                         <strong>{c.value}</strong>
@@ -198,12 +199,12 @@ export default async function ServicePage({ params }: PageProps<"/[locale]/hudum
           </GuideSection>
         </div>
       </div>
-      <section aria-labelledby="related" className="border-t border-line bg-band py-12">
+      <section aria-labelledby="related" className="stage py-12 sm:py-16">
         <div className="wrap">
-          <h2 id="related" className="mb-4 font-display text-[1.375rem] font-extrabold tracking-display">
+          <h2 id="related" className="mb-6 text-[clamp(1.75rem,3.6vw,2.5rem)] font-medium tracking-[-0.04em]">
             {a("related")}
           </h2>
-          <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {related.map((x) => (
               <ServiceTile key={x.slug} s={x} locale={locale} />
             ))}
@@ -220,11 +221,8 @@ export default async function ServicePage({ params }: PageProps<"/[locale]/hudum
 
 function GuideSection({ id, title, children }: { id: string; title: string; children: React.ReactNode }) {
   return (
-    <section id={id} aria-labelledby={`${id}-title`} className="scroll-mt-4">
-      <h2
-        id={`${id}-title`}
-        className="mb-3 border-b border-line pb-2 font-display text-[1.375rem] font-extrabold tracking-display"
-      >
+    <section id={id} aria-labelledby={`${id}-title`} className="scroll-mt-6">
+      <h2 id={`${id}-title`} className="mb-5 text-[clamp(1.75rem,3.6vw,2.25rem)] font-medium tracking-[-0.04em]">
         {title}
       </h2>
       {children}

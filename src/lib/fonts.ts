@@ -1,11 +1,12 @@
-import { Bricolage_Grotesque, Public_Sans } from "next/font/google";
+import { Inter_Tight, Source_Serif_4 } from "next/font/google";
 
-export const bricolage = Bricolage_Grotesque({
+/** Serif display for the big, quiet headlines. Variable, with an optical-size axis so large sizes stay crisp. */
+export const sourceSerif = Source_Serif_4({
   subsets: ["latin"],
   display: "swap",
-  variable: "--font-bricolage",
-  weight: ["700", "800"],
+  variable: "--font-source-serif",
+  axes: ["opsz"],
 });
 
-/** Public Sans: the plain, highly legible face of government service sites, used for body copy. */
-export const publicSans = Public_Sans({ subsets: ["latin"], display: "swap", variable: "--font-body" });
+/** Tight grotesque for interface text and section headings. */
+export const interTight = Inter_Tight({ subsets: ["latin"], display: "swap", variable: "--font-inter-tight" });

@@ -61,25 +61,31 @@ Run `pnpm typecheck && pnpm lint && pnpm test` before declaring any task done.
 - Copy is plain, active and in sentence case. Buttons say exactly what happens ("Fungua tovuti rasmi", "Open the official site").
 
 ### Design
-Carry the prototype's design system forward. Tokens live in `src/app/globals.css` as CSS variables with light and dark values.
+The public UI follows America.gov's calm front door: white pages, near-black indigo ink, soft grey "stage" cards with very round corners, a serif display face for big headlines and a tight grotesque for everything else. Tokens live in `src/app/globals.css` as CSS variables with light and dark values.
 
 | Token | Light | Dark | Use |
 |---|---|---|---|
-| `--bg` | `#EDF2F0` | `#09130F` | Page background |
-| `--surface` | `#FFFFFF` | `#10201B` | Cards, drawer, inputs |
-| `--ink` | `#0D221E` | `#E7F0ED` | Text |
-| `--muted` | `#4E645E` | `#93AAA3` | Secondary text |
-| `--line` | `#D2DDD9` | `#22372F` | Borders |
-| `--brand` | `#0A5A4B` | `#3CC9A7` | Primary actions, headings accents |
-| `--brand-soft` | `#DCEBE6` | `#173A31` | Hover, stamps, official-domain banner |
-| `--hero` | `#0A5A4B` | `#062E26` | Hero background |
-| `--sun` | `#F5B50A` | `#F5B50A` | Search button, active language, highlights |
-| `--ok` | `#0A7A52` | `#52D6A3` | Completed steps, trust icons |
+| `--bg` | `#FFFFFF` | `#0F0E24` | Page background |
+| `--band` | `#F2F2F0` | `#17163A` | Stage cards, soft panels, quiet buttons |
+| `--surface` | `#FFFFFF` | `#1C1B42` | Cards, menu, inputs |
+| `--ink` | `#0D0C24` | `#EFEEF8` | Text |
+| `--muted` | `#5C5B70` | `#A9A8C6` | Secondary text |
+| `--line` | `#E4E4EA` | `#2C2B56` | Borders, dividers |
+| `--primary` | `#1F1C5C` | `#D9D6FF` | Primary buttons (Menyu, send, official site), with `--primary-ink` text |
+| `--hero` | `#12103A` | `#0A0920` | Dark media panels (the ask panel, feature tiles), with `--hero-ink` text |
+| `--sun` | `#F4A31B` | `#F4A31B` | Small accents (AI badge, brand keystone) |
+| `--ok` | `#0F7A52` | `#4FD29B` | Completed steps, secure-link locks |
+| `--hibiscus` | `#A8204F` | `#F0708F` | Emergency numbers |
 
-- Type: Bricolage Grotesque (display, 700 to 800, tight tracking) and Instrument Sans (body), loaded with `next/font`.
-- Signature elements: the arch motif in the hero, agency "stamps" (rounded squares with the agency code), and the search box as the hero's focal point.
+- Type: Source Serif 4 (`serif-display` utility: big greetings, page titles, footer links and wordmark) and Inter Tight (interface text and section headings, medium weight, tight tracking), loaded with `next/font`.
+- Shapes: pages open with a `stage` card (rounded 32 to 44 px) holding the header; cards are rounded 24 to 28 px with `shadow-card`; buttons are pills.
+- Signature elements: the serif greeting with the ask box as the focal point on an indigo panel, agency "stamps" (rounded squares with the agency code), the arch motif, and a thin kanga edge on the footer.
+- Header: wordmark, a single other-language toggle and a "Menyu" pill that opens a `<details>` dropdown. No client JavaScript.
+- Motion is CSS only (the hero preview cycle, the agency wall drift), has a pause control and stops under `prefers-reduced-motion`.
+- Media tiles are drawn with CSS and SVG from catalog data. No stock photos, no third-party seals or logos.
+- Icons: `icon.tsx` ships to the browser with the ask box, so it holds only catalog icons and the ask box's marks. Put page-only glyphs in `glyph.tsx` (server only).
 - Mobile first. Touch targets at least 44 px. Visible focus rings. Respect `prefers-reduced-motion`.
-- Avoid all-caps labels, decorative gradients and arrows appended to button text.
+- Avoid all-caps labels and arrows appended to button text. Gradients only as soft light inside dark or grey panels.
 - shadcn/ui is for the admin panel. Public pages use custom components on the same tokens to keep JavaScript small.
 
 ### Performance

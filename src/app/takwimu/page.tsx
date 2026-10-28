@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import { cookies } from "next/headers";
 import { readFullStats, type DayRow, type FullStats } from "@/db/queries/stats";
 import { getService, loc } from "@/lib/catalog";
-import { bricolage, publicSans } from "@/lib/fonts";
+import { interTight, sourceSerif } from "@/lib/fonts";
 import { STATS_COOKIE, safeEqual, statsToken } from "@/lib/stats/core";
 
 export const dynamic = "force-dynamic";
@@ -27,7 +27,7 @@ function Bi({ sw, en }: { sw: string; en: string }) {
 
 function Shell({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="sw" className={`${bricolage.variable} ${publicSans.variable}`}>
+    <html lang="sw" className={`${sourceSerif.variable} ${interTight.variable}`}>
       <body>
         <main className="wrap space-y-6 py-8">{children}</main>
       </body>

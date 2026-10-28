@@ -25,13 +25,11 @@ export default async function ServicesPage({ params }: PageProps<"/[locale]/hudu
 
   return (
     <main id="main" tabIndex={-1} className="outline-none">
-      <PageHeader crumbs={[{ href: getPathname({ href: "/", locale }), label: n("home") }]}>
-        <h1 className="mt-2 font-display text-[clamp(1.9rem,5vw,2.8rem)] leading-tight font-extrabold tracking-display">
-          {t("title")}
-        </h1>
-        <p className="mt-1 max-w-[60ch] text-[1.0625rem] text-muted">{t("lede")}</p>
-        <nav aria-labelledby="jump" className="mt-6">
-          <h2 id="jump" className="mb-2 text-sm font-semibold text-muted">
+      <PageHeader current="services" crumbs={[{ href: getPathname({ href: "/", locale }), label: n("home") }]}>
+        <h1 className="serif-display mt-3 text-[clamp(2.75rem,8vw,5.25rem)]">{t("title")}</h1>
+        <p className="mt-4 max-w-[48ch] text-[clamp(1.0625rem,2vw,1.25rem)] text-muted">{t("lede")}</p>
+        <nav aria-labelledby="jump" className="mt-8">
+          <h2 id="jump" className="mb-3 text-sm font-medium text-muted">
             {t("jump")}
           </h2>
           <ul className="flex flex-wrap gap-2">
@@ -39,9 +37,9 @@ export default async function ServicesPage({ params }: PageProps<"/[locale]/hudu
               <li key={c.slug}>
                 <a
                   href={`#${c.slug}`}
-                  className="inline-flex min-h-11 items-center gap-2 rounded-full border border-line bg-surface px-3.5 text-[0.9375rem] font-medium no-underline transition-colors hover:border-hero sm:min-h-10"
+                  className="inline-flex min-h-11 items-center gap-2 rounded-full bg-surface px-4 text-[0.9375rem] font-medium no-underline shadow-card transition-shadow hover:shadow-float"
                 >
-                  <Icon name={c.icon} className="text-teal" />
+                  <Icon name={c.icon} />
                   {loc(c.name, locale)}
                 </a>
               </li>
@@ -49,24 +47,24 @@ export default async function ServicesPage({ params }: PageProps<"/[locale]/hudu
           </ul>
         </nav>
       </PageHeader>
-      <div className="wrap space-y-12 pt-10 pb-16">
+      <div className="wrap space-y-16 pt-14 pb-6 sm:pt-20">
         {catalog.categories.map((c) => {
           const services = servicesIn(c.slug);
           return (
-            <section key={c.slug} id={c.slug} aria-labelledby={`${c.slug}-title`} className="scroll-mt-4">
-              <div className="mb-4 flex items-center gap-3 border-b-2 border-hero pb-3">
-                <span className="grid size-10 place-items-center rounded-lg bg-hero text-[1.2rem] text-sun">
+            <section key={c.slug} id={c.slug} aria-labelledby={`${c.slug}-title`} className="scroll-mt-6">
+              <div className="mb-6 flex items-center gap-3 border-b border-line pb-4">
+                <span className="grid size-11 place-items-center rounded-2xl bg-band text-[1.25rem]">
                   <Icon name={c.icon} />
                 </span>
                 <h2
                   id={`${c.slug}-title`}
-                  className="flex-1 font-display text-[1.375rem] font-extrabold tracking-display"
+                  className="flex-1 text-[clamp(1.5rem,3vw,1.875rem)] font-medium tracking-[-0.035em]"
                 >
                   {loc(c.name, locale)}
                 </h2>
                 <span className="text-sm text-muted">{t("count", { count: services.length })}</span>
               </div>
-              <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+              <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
                 {services.map((s) => (
                   <ServiceTile key={s.slug} s={s} locale={locale} />
                 ))}
