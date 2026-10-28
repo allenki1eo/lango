@@ -35,8 +35,8 @@ export function LanguageSwitch({ active, label, names, icon }: LanguageSwitchPro
   }
 
   return (
-    // On small screens only the other language shows, as a single toggle; wider screens show both.
-    <nav aria-label={label} className="inline-flex rounded-full sm:border sm:border-line sm:p-[3px]">
+    // Only the other language shows, as a single quiet toggle; the current one stays in the markup for assistive tech.
+    <nav aria-label={label} className="inline-flex">
       {routing.locales.map((locale) => {
         const href = withLocale(pathname, locale);
         const isActive = locale === active;
@@ -50,7 +50,7 @@ export function LanguageSwitch({ active, label, names, icon }: LanguageSwitchPro
             scroll={false}
             aria-current={isActive ? "true" : undefined}
             onClick={isActive ? undefined : (event) => choose(event, locale, href)}
-            className="inline-flex min-h-11 items-center gap-1.5 rounded-full border border-line px-3.5 text-sm font-semibold no-underline transition-colors hover:bg-band aria-[current=true]:bg-sun aria-[current=true]:text-sun-ink max-sm:aria-[current=true]:hidden sm:min-h-9 sm:border-0"
+            className="inline-flex min-h-11 items-center gap-1.5 rounded-full px-3.5 text-[0.9375rem] font-medium no-underline transition-colors hover:bg-ink/6 aria-[current=true]:hidden"
           >
             {icon}
             {names[locale]}

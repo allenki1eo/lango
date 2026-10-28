@@ -170,7 +170,7 @@ The published catalog is fetched in a `"use cache"` function tagged with `cacheT
 - Public routes: server components by default; client components only for search, drawer, checklist and language switch.
 - Public pages do not mount `NextIntlClientProvider` and do not use next-intl's client `Link` or hooks. Server components translate and pass strings to client components as props; links use `components/public/locale-link.tsx`, which renders `next/link` with a localised href.
 - No component library JavaScript on public routes (shadcn is used in the admin panel only).
-- Fonts: Bricolage Grotesque and Instrument Sans via `next/font`, subset to Latin, with `display: swap`.
+- Fonts: Source Serif 4 (display) and Inter Tight (interface) via `next/font`, subset to Latin, with `display: swap`.
 - Images: none needed in v1. Icons are inline SVG.
 
 ## 9. Environment variables

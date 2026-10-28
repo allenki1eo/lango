@@ -1,6 +1,6 @@
 import { useTranslations } from "next-intl";
 import { isAiEnabled } from "@/lib/ai/enabled";
-import { Icon } from "./icon";
+import { Glyph } from "./glyph";
 
 /**
  * Tells visitors the ask box is AI-assisted and where its facts come from. Server-rendered, and shown
@@ -11,9 +11,9 @@ export function AiNote() {
   if (!isAiEnabled()) return null;
 
   return (
-    <p className="mt-3 flex max-w-[760px] flex-wrap items-center gap-x-2 gap-y-1 text-[0.9375rem] text-muted in-data-[surface=hero]:text-hero-muted">
-      <span className="inline-flex items-center gap-1 rounded-full bg-sun-soft px-2.5 py-0.5 text-sm font-semibold text-ink in-data-[surface=hero]:bg-white/12 in-data-[surface=hero]:text-hero-ink">
-        <Icon name="sparkle" className="text-teal in-data-[surface=hero]:text-sun" />
+    <p className="mx-auto mt-3 flex max-w-[60ch] flex-wrap items-center justify-center gap-x-2 gap-y-1 px-2 text-center text-[0.875rem] text-muted in-data-[surface=hero]:text-hero-muted">
+      <span className="inline-flex items-center gap-1 font-semibold text-ink in-data-[surface=hero]:text-hero-ink">
+        <Glyph name="sparkle" className="text-sun" />
         {t("aiBadge")}
       </span>
       <span>{t("aiIntro")}</span>

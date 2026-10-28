@@ -16,8 +16,8 @@
     "en": "English"
   },
   "Hero": {
-    "title": "Unataka kufanya nini leo?",
-    "subtitle": "Uliza kwa maneno yako, au gusa huduma hapa chini. Tunakuonyesha hatua, nyaraka na tovuti rasmi."
+    "title": "Habari, Tanzania",
+    "subtitle": "Chochote unachohitaji kutoka serikalini, anzia hapa."
   },
   "Search": {
     "label": "Uliza swali au andika huduma",
@@ -46,14 +46,13 @@
     "disclaimer": "Lango ni mwongozo huru, si tovuti ya serikali. Hakiki kila hatua kwenye tovuti ya taasisi husika kabla ya kulipa au kuwasilisha.",
     "privacy": "Maendeleo ya hatua zako yanahifadhiwa kwenye kifaa chako pekee.",
     "by": "na Hanki Technologies",
-    "top": "Rudi juu",
-    "tagline": "Huduma za serikali ya Tanzania, rahisi kupata.",
-    "topics": "Makundi ya huduma",
-    "popular": "Zinazotafutwa zaidi",
     "emergency": "Namba za dharura",
     "visitors": "Wageni",
     "visitorsToday": "Leo",
-    "visitorsHint": "Visitors: watu waliotembelea Lango (makadirio, bila kuhifadhi taarifa binafsi)"
+    "visitorsHint": "Visitors: watu waliotembelea Lango (makadirio, bila kuhifadhi taarifa binafsi)",
+    "credit": "Mwongozo huru wa wananchi",
+    "creditSub": "si tovuti ya serikali",
+    "nav": "Viungo vya chini"
   },
   "Ask": {
     "thinking": "Lango inatafuta…",
@@ -69,16 +68,27 @@
     "aiIntro": "AI inakusaidia kupata huduma sahihi. Hatua, ada na viungo vyote vinatoka kwenye vyanzo rasmi tulivyokagua."
   },
   "Home": {
-    "categories": "Chagua huduma",
-    "popular": "Zinazotafutwa zaidi",
     "emergency": "Dharura? Piga bure",
     "allServices": "Huduma zote",
     "callLabel": "Piga {number}",
-    "topics": "Huduma kwa makundi",
-    "topicsLede": "Chagua kundi, kisha huduma unayohitaji. Kila mwongozo una nyaraka, hatua, ada na kiungo rasmi.",
-    "popularLede": "Huduma ambazo watu hutafuta mara nyingi.",
-    "jump": "Ruka hadi makundi yote",
-    "seeAll": "Tazama huduma zote"
+    "topics": "Chagua huduma",
+    "topicsLede": "Kila mwongozo una nyaraka za kuandaa, hatua za kufuata, ada zilizothibitishwa na kiungo cha tovuti rasmi.",
+    "seeAll": "Tazama huduma zote",
+    "emergencyPill": "Namba za dharura, bila malipo",
+    "previewLabel": "Mifano ya miongozo ya Lango",
+    "pause": "Simamisha mifano inayozunguka",
+    "previewSteps": "Hatua",
+    "previewDocs": "Nyaraka",
+    "previewChecked": "Imekaguliwa {date}",
+    "agenciesTitle": "Taasisi {count}, mahali pamoja.",
+    "agenciesBody": "Usizunguke tena kutoka tovuti moja hadi nyingine. Lango inakusanya hatua za huduma za serikali mahali pamoja.",
+    "privacyTitle": "Taarifa zako zinabaki kwako.",
+    "privacyBody": "Hatuombi NIN, namba ya simu wala nenosiri. Taarifa binafsi huondolewa kwenye swali lako kabla halijamfikia msaidizi, na hatua ulizomaliza zinahifadhiwa kwenye kifaa chako tu.",
+    "sourcesTitle": "Majibu wazi. Vyanzo rasmi.",
+    "sourcesBody": "Kila hatua, ada na kiungo kinatoka kwenye tovuti rasmi ya taasisi husika, pamoja na tarehe tulipokagua mara ya mwisho.",
+    "appTitle": "Hakuna app ya kupakua.",
+    "appBody": "Fungua Lango kwenye kivinjari cha simu, kompyuta kibao au kompyuta yako.",
+    "askLink": "Uliza swali"
   },
   "Guide": {
     "official": "Fungua tovuti rasmi",

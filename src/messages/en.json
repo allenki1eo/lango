@@ -16,8 +16,8 @@
     "en": "English"
   },
   "Hero": {
-    "title": "What do you need to do today?",
-    "subtitle": "Ask in your own words, or tap a service below. We show the steps, documents and the official site."
+    "title": "Hello, Tanzania",
+    "subtitle": "Whatever you need from government, start here."
   },
   "Search": {
     "label": "Ask a question or type a service",
@@ -41,14 +41,13 @@
     "disclaimer": "Lango is an independent guide, not a government website. Check every step on the agency's site before paying or submitting.",
     "privacy": "Your step progress is stored on your device only.",
     "by": "by Hanki Technologies",
-    "top": "Back to top",
-    "tagline": "Tanzanian government services, easier to find.",
-    "topics": "Service topics",
-    "popular": "Most searched",
     "emergency": "Emergency numbers",
     "visitors": "Visitors",
     "visitorsToday": "Today",
-    "visitorsHint": "People who have visited Lango (estimate, no personal data stored)"
+    "visitorsHint": "People who have visited Lango (estimate, no personal data stored)",
+    "credit": "An independent guide for citizens",
+    "creditSub": "not a government website",
+    "nav": "Footer links"
   },
   "Ask": {
     "thinking": "Lango is looking…",
@@ -64,16 +63,27 @@
     "aiIntro": "AI helps you find the right service. Every step, fee and link comes from official sources we have checked."
   },
   "Home": {
-    "categories": "Choose a service",
-    "popular": "Most searched",
     "emergency": "Emergency? Call free",
     "allServices": "All services",
     "callLabel": "Call {number}",
-    "topics": "Services by topic",
-    "topicsLede": "Pick a topic, then the service you need. Every guide lists documents, steps, fees and the official link.",
-    "popularLede": "The services people look for most often.",
-    "jump": "Jump to all topics",
-    "seeAll": "See all services"
+    "topics": "Choose a service",
+    "topicsLede": "Every guide lists the documents to prepare, the steps to follow, verified fees and the link to the official site.",
+    "seeAll": "See all services",
+    "emergencyPill": "Free emergency numbers",
+    "previewLabel": "Examples of Lango guides",
+    "pause": "Pause the rotating examples",
+    "previewSteps": "Steps",
+    "previewDocs": "Documents",
+    "previewChecked": "Checked {date}",
+    "agenciesTitle": "{count} agencies, one place.",
+    "agenciesBody": "No more wandering from site to site. Lango brings the steps for government services together in one place.",
+    "privacyTitle": "Your details stay yours.",
+    "privacyBody": "We never ask for your NIN, phone number or password. Personal details are removed from your question before it reaches the assistant, and the steps you tick off stay on your device.",
+    "sourcesTitle": "Clear answers. Official sources.",
+    "sourcesBody": "Every step, fee and link comes from the agency's own official website, with the date we last checked it.",
+    "appTitle": "No app to download.",
+    "appBody": "Just open Lango in the browser on your phone, tablet or computer.",
+    "askLink": "Ask a question"
   },
   "Guide": {
     "official": "Open the official site",

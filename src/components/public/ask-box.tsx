@@ -111,11 +111,8 @@ export function AskBox({
         action={action}
         method="get"
         onSubmit={onSubmit}
-        className="relative flex max-w-[760px] gap-2 rounded-xl border-2 border-hero bg-surface p-1.5 text-ink shadow-card transition-shadow focus-within:shadow-[0_0_0_3px_var(--sun)] in-data-[surface=hero]:border-transparent in-data-[surface=hero]:shadow-float"
+        className="flex items-center gap-2 rounded-full border border-line bg-surface p-2 pl-6 text-ink shadow-float transition-shadow focus-within:shadow-[0_0_0_3px_var(--focus)]"
       >
-        <span className="hidden place-items-center pl-3 text-teal sm:grid">
-          <Icon name="sparkle" />
-        </span>
         <label htmlFor="q" className="sr-only">
           {copy.label}
         </label>
@@ -129,29 +126,27 @@ export function AskBox({
           value={q}
           onChange={(e) => setQ(e.target.value)}
           placeholder={copy.placeholder}
-          className="min-w-0 flex-1 bg-transparent px-2 py-3.5 text-[1.05rem] font-medium outline-none placeholder:text-muted placeholder:opacity-100 sm:text-lg [&::-webkit-search-cancel-button]:hidden"
+          className="min-w-0 flex-1 bg-transparent py-3 text-lg outline-none placeholder:text-muted placeholder:opacity-100 sm:text-xl [&::-webkit-search-cancel-button]:hidden"
         />
         <button
           type="submit"
           disabled={busy}
-          className="flex min-h-[52px] items-center gap-2 rounded-lg bg-sun px-5 font-display font-bold text-sun-ink transition hover:brightness-105 disabled:opacity-70 sm:px-7"
+          className="grid size-12 flex-none place-items-center rounded-full bg-primary text-xl text-primary-ink transition hover:opacity-90 disabled:opacity-70"
         >
           {busy ? (
             <span
-              className="size-4 animate-spin rounded-full border-2 border-sun-ink border-t-transparent"
+              className="size-5 animate-spin rounded-full border-2 border-current border-t-transparent"
               aria-hidden="true"
             />
           ) : (
-            <Icon name="search" />
+            <Icon name="arrow" />
           )}
-          <span>{copy.submit}</span>
+          <span className="sr-only">{copy.submit}</span>
         </button>
       </form>
       {note}
-      <div className="mt-4 flex flex-wrap items-center gap-2">
-        <span className="mr-0.5 text-[0.9375rem] text-muted in-data-[surface=hero]:text-hero-muted">
-          {copy.tryLabel}
-        </span>
+      <div className="mt-4 flex flex-wrap items-center justify-center gap-2 px-2">
+        <span className="text-[0.9375rem] text-muted in-data-[surface=hero]:text-hero-muted">{copy.tryLabel}</span>
         {copy.examples.map((ex) => (
           <a
             key={ex}
@@ -161,7 +156,7 @@ export function AskBox({
               setQ(ex);
               run(ex);
             }}
-            className="inline-flex min-h-11 items-center rounded-full border border-line bg-surface px-3.5 text-[0.9375rem] no-underline transition-colors hover:border-hero sm:min-h-[38px] in-data-[surface=hero]:border-white/35 in-data-[surface=hero]:bg-transparent in-data-[surface=hero]:hover:bg-white/12"
+            className="inline-flex min-h-11 items-center rounded-full bg-ink/6 px-4 text-[0.9375rem] no-underline transition-colors hover:bg-ink/10 in-data-[surface=hero]:bg-white/12 in-data-[surface=hero]:hover:bg-white/20"
           >
             {ex}
           </a>
@@ -170,20 +165,20 @@ export function AskBox({
 
       <div ref={out} tabIndex={-1} aria-live="polite" className="outline-none">
         {busy ? (
-          <p className="mt-6 flex items-center gap-2 text-muted in-data-[surface=hero]:text-hero-muted">
+          <p className="mt-6 flex items-center justify-center gap-2 text-muted in-data-[surface=hero]:text-hero-muted">
             <span className="size-2 animate-ping rounded-full bg-sun" aria-hidden="true" />
             {copy.thinking}
           </p>
         ) : null}
         {err ? (
-          <p data-surface="light" className="mt-6 rounded-lg border border-line bg-surface p-4 text-ink">
+          <p data-surface="light" className="mt-6 rounded-3xl bg-surface p-5 text-ink shadow-card">
             {err}
           </p>
         ) : null}
         {answer ? (
           <section
             data-surface="light"
-            className="mt-6 max-w-[760px] space-y-3 rounded-xl border border-line bg-surface p-4 text-ink shadow-float sm:p-6"
+            className="mt-6 space-y-4 rounded-[28px] bg-surface p-5 text-left text-ink shadow-float sm:p-7"
           >
             <p className="text-sm text-muted">“{answer.q}”</p>
             {answer.text ? <p className="text-[1.05rem] leading-relaxed whitespace-pre-line">{answer.text}</p> : null}
@@ -192,11 +187,11 @@ export function AskBox({
             ) : (
               <article className="space-y-4">
                 <div className="flex items-start gap-3">
-                  <span className="grid size-11 flex-none place-items-center rounded-xl bg-sun-soft text-[1.35rem] text-hero">
+                  <span className="grid size-11 flex-none place-items-center rounded-2xl bg-band text-[1.35rem]">
                     <Icon name={g.icon} />
                   </span>
                   <div>
-                    <h2 className="font-display text-xl leading-tight font-bold">{g.title}</h2>
+                    <h2 className="text-xl leading-tight font-semibold tracking-tight">{g.title}</h2>
                     <p className="text-sm text-muted">
                       {g.agency} · {g.summary}
                     </p>
@@ -207,14 +202,14 @@ export function AskBox({
                   data-tap={g.slug}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex min-h-12 items-center justify-center gap-2 rounded-lg bg-hero px-4 font-semibold text-hero-ink no-underline hover:brightness-125"
+                  className="flex min-h-12 items-center justify-center gap-2 rounded-full bg-primary px-5 font-semibold text-primary-ink no-underline hover:opacity-90"
                 >
                   {copy.official} <Icon name="external" />{" "}
                   <span className="truncate text-sm font-normal">{new URL(g.officialUrl).hostname}</span>
                 </a>
                 {g.documents.length ? (
                   <div>
-                    <h3 className="mb-2 font-display font-bold">{copy.documents}</h3>
+                    <h3 className="mb-2 font-semibold">{copy.documents}</h3>
                     <ul className="list-disc space-y-1 pl-5">
                       {g.documents.map((d) => (
                         <li key={d}>{d}</li>
@@ -223,11 +218,11 @@ export function AskBox({
                   </div>
                 ) : null}
                 <div>
-                  <h3 className="mb-2 font-display font-bold">{copy.steps}</h3>
+                  <h3 className="mb-2 font-semibold">{copy.steps}</h3>
                   <Checklist id={g.slug} items={g.steps} doneLabel={copy.done} resetLabel={copy.reset} />
                 </div>
                 <div>
-                  <h3 className="mb-2 font-display font-bold">{copy.fees}</h3>
+                  <h3 className="mb-2 font-semibold">{copy.fees}</h3>
                   {g.fees.length ? (
                     <ul className="space-y-1.5">
                       {g.fees.map((f) => (
@@ -265,7 +260,7 @@ export function AskBox({
             )}
             {answer.cards.offices.length ? (
               <div>
-                <h3 className="mb-2 font-display font-bold">{copy.offices}</h3>
+                <h3 className="mb-2 font-semibold">{copy.offices}</h3>
                 <ul className="space-y-1.5">
                   {answer.cards.offices.map((o) => (
                     <li key={o.name} className="text-sm">
@@ -284,15 +279,15 @@ export function AskBox({
             ) : null}
             {answer.cards.services.length ? (
               <div>
-                <h3 className="mb-2 font-display font-bold">{copy.related}</h3>
+                <h3 className="mb-2 font-semibold">{copy.related}</h3>
                 <div className="grid gap-2 sm:grid-cols-2">
                   {answer.cards.services.map((s) => (
                     <a
                       key={s.slug}
                       href={`${prefix}/huduma/${s.slug}`}
-                      className="flex min-h-12 items-center gap-2 rounded-lg border border-line p-3 no-underline hover:border-hero"
+                      className="flex min-h-12 items-center gap-2 rounded-2xl bg-band p-3 no-underline hover:bg-line"
                     >
-                      <Icon name={s.icon} className="text-teal" />
+                      <Icon name={s.icon} />
                       <span className="font-medium">{s.title}</span>
                     </a>
                   ))}
